@@ -1,15 +1,15 @@
 import * as React from "react";
 
-interface Props {
-  children: React.ReactNode
+type Props = {
+  children?: React.ReactNode
 }
 
-const Layout = ({ children }: Props) => {
+const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <header>Header</header>
       <main>
-        {{ children }}
+        {children}
       </main>
       <footer>Footer</footer>
     </>
