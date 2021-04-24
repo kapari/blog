@@ -15,8 +15,13 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@types/node": "^14.14.41",
     "gatsby": "^3.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "stylelint": "^13.12.0",
+    "stylelint-config-standard": "^21.0.0"
   }
 }
