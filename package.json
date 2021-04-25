@@ -13,6 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "lint": "npx stylelint \"./src/**/*.scss\" --fix",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "dependencies": {
