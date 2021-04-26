@@ -20,7 +20,7 @@
     "@types/node": "^14.14.41",
     "gatsby": "^3.3.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
     "sass": "^1.32.11"
   },
   "devDependencies": {
