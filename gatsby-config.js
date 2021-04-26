@@ -1,5 +1,15 @@
 module.exports = {
   plugins: [
-    'gatsby-plugin-scss-typescript',
+    {
+      resolve: 'gatsby-plugin-scss-typescript',
+      options: {
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
+        },
+      },
+    },
   ]
 };

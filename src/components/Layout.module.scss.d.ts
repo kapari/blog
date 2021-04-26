@@ -1,6 +1,6 @@
 declare namespace LayoutModuleScssNamespace {
   export interface ILayoutModuleScss {
-    layout: string;
+    el: string;
   }
 }
 
