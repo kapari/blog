@@ -1,11 +1,14 @@
 {
   "name": "personal-site",
   "version": "1.0.0",
-  "private": true,
-  "description": "Personal Site",
+  "private": false,
+  "description": "Personal Website with Gatsby, Sass, Typescript",
   "author": "Ariel Kaplan",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "sass",
+    "css modules",
+    "typescript"
   ],
   "scripts": {
     "develop": "gatsby develop",
