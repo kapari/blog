@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import Layout from '../components/Layout';
 
 interface Props {
   readonly data: {
@@ -19,11 +20,11 @@ const Template = ({
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark;
   return (
-    <div className="blog-post">
+    <Layout>
       <h1>{frontmatter.title}</h1>
       <p>{frontmatter.date}</p>
       <div dangerouslySetInnerHTML={{ __html: html }} />
-    </div>
+    </Layout>
   )
 }
 

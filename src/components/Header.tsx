@@ -8,7 +8,6 @@ const Header: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (props: Prop
   return (
     <header>
       <h2>Site Title</h2>
-      <p>Me</p>
       <nav>
         <ul>
           <li>
