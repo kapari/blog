@@ -1,0 +1,7 @@
+// Global reset and base styles
+@import '../assets/scss/variables.scss';
+
+body {
+  background-color: $bg;
+  color: $text;
+}

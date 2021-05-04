@@ -54,6 +54,7 @@ const PostsList: React.FC = () => {
 
   return (
     <Layout>
+      <h1>Blog</h1>
       <ul>
         {posts.map((item) => {
           const {

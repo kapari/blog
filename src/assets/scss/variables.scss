@@ -1,9 +1,14 @@
 // Local Color Variables
 $_white: #fff;
 $_black: #111;
-$_dark-purple: #21143f;
-$_med-purple: #402b70;
+$_dark-purple: #1b1e38;
+$_med-purple: #262942;
+$_med-blue: #4c5d79;
+$_light-blue: #8e9eb9;
 
 $bg: $_dark-purple;
+$bg-variant: $_med-purple;
 $text: $_white;
-$accent: $_med-purple;
+$accent: $_med-blue;
+$accent-variant: $_light-blue;
+$accent-text: $_white;
