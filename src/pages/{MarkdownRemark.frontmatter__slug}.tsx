@@ -21,7 +21,7 @@ const Template = ({
   return (
     <div className="blog-post">
       <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.date}</h2>
+      <p>{frontmatter.date}</p>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   )
