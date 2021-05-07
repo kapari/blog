@@ -1,0 +1,5 @@
+@import './variables.scss';
+
+@mixin transition($property: color, $duration: 0.25s) {
+  transition: $property $duration ease-in-out;
+}
