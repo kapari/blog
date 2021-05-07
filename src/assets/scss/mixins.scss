@@ -3,3 +3,18 @@
 @mixin transition($property: color, $duration: 0.25s) {
   transition: $property $duration ease-in-out;
 }
+
+@mixin text-link {
+  @include transition(all);
+
+  color: $accent;
+  text-decoration: none;
+  box-shadow: 0 1px 0 transparent;
+  
+  &:hover,
+  &:active,
+  &:focus {
+    color: $text;
+    box-shadow: 0 0.1em 0 $accent;
+  }
+}

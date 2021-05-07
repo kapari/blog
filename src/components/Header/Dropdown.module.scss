@@ -1,0 +1,24 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.dropdown__link {
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.dropdown__toggle {
+  @include text-link;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  line-height: 1.2;
+  cursor: pointer;
+}

@@ -27,6 +27,7 @@
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-remark": "^4.1.0",
     "react": "^17.0.1",
+    "react-accessible-dropdown-menu-hook": "^2.2.2",
     "react-dom": "^17.0.1",
     "react-typography": "^0.16.19",
     "remark-typescript": "^0.3.1",
