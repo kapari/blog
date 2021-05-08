@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import { el } from './Layout.module.scss';
 
 type Props = {
@@ -11,7 +12,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <div className={el}>
       <Header />
       <main>{children}</main>
-      <footer>Footer</footer>
+      <Footer />
     </div>
   );
 };
