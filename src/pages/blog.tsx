@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo/Seo';
 
 interface Post {
   node: {
@@ -54,6 +55,10 @@ const PostsList: React.FC = () => {
 
   return (
     <Layout>
+      <Seo
+        title="Blog"
+        description="Thoughts about Tech, Dance, and other artistic endeavors"
+      />
       <h1>Blog</h1>
       <ul>
         {posts.map((item) => {

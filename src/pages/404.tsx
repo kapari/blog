@@ -1,10 +1,15 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
+import Layout from '../components/Layout';
+import Seo from '../components/Seo/Seo';
 
 const NotFoundPage = () => {
   return (
-    <main>
-      <title>Not found</title>
+    <Layout>
+      <Seo
+        title="Page not Found"
+        description="404 Error"
+      />
       <h1>Page not found</h1>
       <p>
         Sorry, we couldn’t find what you were looking for.
@@ -19,7 +24,7 @@ const NotFoundPage = () => {
         <br />
         <Link to="/">Go home</Link>.
       </p>
-    </main>
+    </Layout>
   );
 };
 

@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo/Seo';
 
 const AboutPage = () => {
   return (
     <Layout>
-      <title>About</title>
+      <Seo
+        title="About"
+        description="Background and Contact"
+      />
       <h1>About</h1>
       <p>
         Here is some stuff about me.

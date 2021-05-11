@@ -32,7 +32,7 @@ const Template = ({
         article
       />
       <h1>{frontmatter.title}</h1>
-      <p>{frontmatter.date}</p>
+      {frontmatter.date && <p>{frontmatter.date}</p>}
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
