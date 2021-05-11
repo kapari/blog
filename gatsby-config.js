@@ -1,4 +1,11 @@
 module.exports = {
+  siteMetadata: {
+    title: "Ariel Kaplan",
+    titleTemplate: "%s | Portland, OR",
+    description: "Partner dancing, Web development, and other creative endeavors",
+    url: "https://www.arielkaplan.com",
+    twitterUsername: "@arielhkaplan",
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-scss-typescript',
@@ -24,10 +31,11 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     {
       resolve: 'gatsby-transformer-remark',
       plugins: ['gatsby-remark-typescript']
-    },
+    }
   ]
 };
