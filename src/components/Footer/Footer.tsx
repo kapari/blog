@@ -12,7 +12,7 @@ const Footer: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (props: Prop
 
   return (
     <footer>
-      <p>&copy; {year} Ariel Kaplan</p>
+      <p>&copy; Copyright {year} Ariel Kaplan</p>
     </footer>
   );
 };

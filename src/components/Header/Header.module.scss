@@ -1,0 +1,23 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.nav__list {
+  @include list-zero;
+  display: flex;
+  align-items: center;
+}
+
+.nav__item {
+  flex: 0 0 auto;
+}
+
+.nav__link {
+  @include text-link($child: 'span');
+  padding: 1rem;
+  box-shadow: none;
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none;
+  }
+}

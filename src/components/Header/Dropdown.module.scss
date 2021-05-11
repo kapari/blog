@@ -9,16 +9,33 @@
   visibility: hidden;
 }
 
+.dropdown {
+  position: relative;
+}
+
 .dropdown__link {
   display: inline-block;
   line-height: 1.2;
+  white-space: nowrap;
+  &::after {
+    content: '';
+    display: block;
+  }
 }
 
 .dropdown__toggle {
-  @include text-link;
+  @include text-link($child: 'span');
+  display: inline-flex;
+  align-items: center;
   border: none;
   background-color: transparent;
-  padding: 0;
+  padding: 1rem;
   line-height: 1.2;
   cursor: pointer;
+}
+
+.dropdown__items {
+  position: absolute;
+  top: 100%; 
+  left: 1rem;
 }
