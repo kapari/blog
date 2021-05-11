@@ -11,7 +11,7 @@
 }
 
 @mixin text-link($child: '&') {
-  @include transition;
+  @include transition(color);
   color: $accent;
   text-decoration: none;
   
@@ -26,7 +26,7 @@
     color: $text;
 
     #{$child} {
-      box-shadow: 0 0.1em 0 $accent;
+      box-shadow: 0 2px 0 $accent;
     }
   }
 }

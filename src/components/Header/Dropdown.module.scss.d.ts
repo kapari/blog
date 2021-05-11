@@ -1,11 +1,12 @@
 declare namespace DropdownModuleScssNamespace {
   export interface IDropdownModuleScss {
     dropdown: string;
+    dropdown__arrow: string;
     dropdown__items: string;
     dropdown__link: string;
     dropdown__toggle: string;
-    hidden: string;
-    visible: string;
+    isExpanded: string;
+    isVisible: string;
   }
 }
 
