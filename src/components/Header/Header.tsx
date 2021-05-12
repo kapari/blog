@@ -11,14 +11,14 @@ import {
   nav__link
 } from './Header.module.scss';
 
-type Props = {
-  children?: React.ReactNode
-};
-
 const danceLinks = [
   {
     url: '/dance/event-calendar',
     text: 'Event Calendar'
+  },
+  {
+    url: '/dance/classes',
+    text: 'Class Offerings'
   },
   {
     url: '/dance/practice-playlists',
@@ -26,11 +26,14 @@ const danceLinks = [
   }
 ]
 
-const topLinks = [
+const techLinks = [
   {
-    url: '/',
-    text: 'Home'
-  },
+    url: '/tech/css-art',
+    text: 'CSS Art'
+  }
+]
+
+const topLinks = [
   {
     url: '/blog/',
     text: 'Blog'
@@ -38,21 +41,25 @@ const topLinks = [
   {
     text: 'Dance',
     children: danceLinks
+  },
+  {
+    text: 'Tech',
+    children: techLinks
   }
 ]
 
-const Header: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (props: Props) => {
+const Header: React.FC = () => {
 
   return (
     <header>
-      <div className={header__brand}>
+      <Link to="/" className={header__brand}>
         <span className={header__logo}>
           <Logo />
         </span>
-        <h2 className={header__name}>
+        <span className={header__name}>
           Ariel Kaplan
-        </h2>
-      </div>
+        </span>
+      </Link>
       <nav>
         <ul className={nav__list}>
           {topLinks.map(item => (
