@@ -45,7 +45,7 @@ module.exports = {
             resolve: "gatsby-remark-codepen",
             options: {
               theme: "dark",
-              height: 400,
+              height: 500,
               defaultTab: "css,result"
             }
           }
