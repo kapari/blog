@@ -36,6 +36,21 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       plugins: ['gatsby-remark-typescript']
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-codepen",
+            options: {
+              theme: "dark",
+              height: 400,
+              defaultTab: "css,result"
+            }
+          }
+        ]
+      }
     }
   ]
 };
