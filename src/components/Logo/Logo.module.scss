@@ -1,0 +1,14 @@
+@import '../../assets/scss/variables.scss';
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo__content {
+  transform: rotate(102deg) translate(43%, -63%);
+}
+
+.logo__path {
+  fill: $text-subtle;
+}

@@ -41,6 +41,7 @@ const Dropdown: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (props: Pr
               to={item.url}
               role="menuitem"
               className={dropdown__link}
+              key={item.url}
             >
               {item.text}
             </Link>

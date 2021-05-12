@@ -9,6 +9,7 @@ $_light-blue: #8e9eb9;
 $bg: $_dark-purple;
 $bg-variant: $_med-purple;
 $text: $_white;
+$text-subtle: transparentize($_white, 0.2);
 $border: transparentize($_white, 0.8);
 $accent: $_light-blue;
 $accent-variant: $_med-blue;
