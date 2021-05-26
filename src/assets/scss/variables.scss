@@ -1,16 +1,18 @@
 // Local Color Variables
 $_white: #fff;
 $_black: #111;
-$_dark-purple: #1b1e38;
-$_med-purple: #262942;
-$_med-blue: #4c5d79;
-$_light-blue: #8e9eb9;
 
-$bg: $_dark-purple;
-$bg-variant: $_med-purple;
-$text: $_white;
-$text-subtle: transparentize($_white, 0.2);
-$border: transparentize($_white, 0.8);
-$accent: $_light-blue;
-$accent-variant: $_med-blue;
+$_pale-green: #f9faf4;
+$_light-green: #edf2e3;
+$_med-green: #c1cfa0;
+$_teal: #50777c;
+$_off-black: #393a41;
+
+$bg: $_pale-green;
+$bg-variant: $_light-green;
+$text: $_off-black;
+$text-subtle: transparentize($_off-black, 0.2);
+$border: $_med-green;
+$accent: $_teal;
+$accent-variant: $_off-black;
 $accent-text: $_white;

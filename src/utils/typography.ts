@@ -2,11 +2,11 @@ import Typography, { TypographyOptions } from 'typography'
 import theme from 'typography-theme-grand-view'
 
 theme.baseFontSize = '20px'
-theme.googleFonts = [{ name: 'Raleway', styles: ['300', '800'] }]
-theme.headerFontFamily = ['Raleway', 'sans-serif']
-theme.bodyFontFamily = ['Raleway', 'sans-serif']
-theme.headerColor = "rgba(255, 255, 255, 0.8)"
-theme.bodyColor = "#fff"
+theme.googleFonts = [{ name: 'Poppins', styles: ['300', '700'] }]
+theme.headerFontFamily = ['Poppins', 'sans-serif']
+theme.bodyFontFamily = ['Poppins', 'sans-serif']
+theme.headerColor = "#393a41"
+theme.bodyColor = "#393a41"
 theme.headerWeight = 700
 theme.bodyWeight = 400
 theme.boldWeight = 700
