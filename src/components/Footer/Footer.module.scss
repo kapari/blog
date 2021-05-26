@@ -1,0 +1,42 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.el {
+  border-top: 1px solid $border;
+  background-color: $bg-variant;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  @include list-zero;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  @include transition;
+  padding: 0.5rem;
+  color: $text;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $accent;
+    box-shadow: none;
+  }
+}
+
+.copyright {
+  margin-bottom: 0;
+}
+
+.hidden {
+  @include visually-hidden;
+}
