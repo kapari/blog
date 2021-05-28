@@ -1,8 +1,9 @@
 declare namespace HeaderModuleScssNamespace {
   export interface IHeaderModuleScss {
-    header__brand: string;
-    header__logo: string;
-    header__name: string;
+    brandLink: string;
+    content: string;
+    logo: string;
+    name: string;
     nav__item: string;
     nav__link: string;
     nav__list: string;

@@ -1,9 +1,28 @@
 @import '../assets/scss/global.scss';
 
 .el {
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  position: relative;
+  &::before {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    display: block;
+    width: $margin-mobile + 2rem;
+    height: 100vh;
+    background-image: 
+      linear-gradient(to left, $bg, transparent 2rem),
+      url("data:image/svg+xml,<svg id='patternId' width='200%' height='200%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='hex' patternUnits='userSpaceOnUse' width='69.141' height='40' patternTransform='scale(2) rotate(25)'><rect x='0' y='0' width='100%' height='100%' fill='transparent'/><path d='M69.212 40H46.118L34.57 20 46.118 0h23.094l11.547 20zM57.665 60H34.57L23.023 40 34.57 20h23.095l11.547 20zm0-40H34.57L23.023 0 34.57-20h23.095L69.212 0zM34.57 60H11.476L-.07 40l11.547-20h23.095l11.547 20zm0-40H11.476L-.07 0l11.547-20h23.095L46.118 0zM23.023 40H-.07l-11.547-20L-.07 0h23.094L34.57 20z' stroke-width='2' stroke='hsl(80, 37%, 92%)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-146,-16)' fill='url(%23hex)'/></svg>");
+    @media (min-width: $xs) {
+      width: $margin-desktop + 2rem;
+    }
+    @media (min-width: $lg) {
+      width: calc((100% - #{$lg}) / 2 + (#{$margin-desktop} + 2rem));
+    }
+  }
+}
+
+.main {
+  @include container;
 }

@@ -1,10 +1,19 @@
+// Breakpoints
+$xs: 576px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+$xl: 1400px;
+
 // Local Color Variables
 $_white: #fff;
 $_black: #111;
 
 $_pale-green: #f9faf4;
 $_light-green: #edf2e3;
+$_light-green-hsl: 80, 37%, 92%;
 $_med-green: #c1cfa0;
+$_med-green-hsl: 78, 33%, 72%;
 $_teal: #50777c;
 $_off-black: #393a41;
 
@@ -16,3 +25,7 @@ $border: $_med-green;
 $accent: $_teal;
 $accent-variant: $_off-black;
 $accent-text: $_white;
+
+// Sizes
+$margin-mobile: 1rem;
+$margin-desktop: 3rem;
