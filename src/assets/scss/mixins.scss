@@ -53,3 +53,7 @@
     padding-right: $margin-desktop;
   }
 }
+
+@mixin title {
+  font-size: 2.4rem;
+}

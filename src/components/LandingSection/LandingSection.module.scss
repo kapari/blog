@@ -1,0 +1,29 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.el {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.content {
+  flex: 0 1 50%;
+}
+
+.image {
+  max-width: 100%;
+}
+
+.heading {
+  @include title;
+}
+
+.list {
+  @include list-zero;
+  line-height: 1.25;
+}
+
+.item {
+  color: inherit;
+}
