@@ -44,16 +44,24 @@
 
 @mixin container {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
   padding-left: $margin-mobile;
   padding-right: $margin-mobile;
   @media (min-width: $xs) {
     padding-left: $margin-desktop;
     padding-right: $margin-desktop;
   }
+  @media (min-width: $lg) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @mixin title {
-  font-size: 2.4rem;
+  font-size: 1.5rem;
+  @media (min-width: $xs) {
+    font-size: 1.875rem;
+  }
+  @media (min-width: $md) {
+    font-size: 2.4rem;
+  }
 }

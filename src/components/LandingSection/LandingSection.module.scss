@@ -2,26 +2,78 @@
 @import '../../assets/scss/mixins.scss';
 
 .el {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
+  position: relative;
+  margin-bottom: 2rem;
+  font-size: .9rem;
+  @media (min-width: $sm) {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: unset;
+  }
 }
 
 .content {
-  flex: 0 1 50%;
+  position: relative;
+  @media (min-width: $sm) {
+    flex: 0 1 50%;
+  }
+}
+
+.content_image {
+  position: absolute;
+  max-width: 300px;
+  right: 0;
+  @media (min-width: $sm) {
+    position: static;
+    flex: 0 1 50%;
+    max-width: unset;
+    max-width: 450px;
+    height: 235px;
+  }
 }
 
 .image {
-  max-width: 100%;
+  position: relative;
+  height: 100%;
+  clip-path: polygon(0% 27%, 100% 96%, 66% 0);
+  overflow: hidden;
+  @media (min-width: $sm) {
+    transform: rotate(-30deg);
+    max-width: calc(100% - 1rem);
+    clip-path: polygon(25% 0%, 75% 0, 100% 50%, 75% 100%, 25% 100%, 50% 50%);
+    height: 150%;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparentize($bg-variant, 0.2);
+    @media (min-width: $sm) {
+      background-color: transparentize($bg-variant, 0.3);
+    }
+  }
+
+  & > div {
+    @media (min-width: $sm) {
+      transform: rotate(30deg);
+    }
+  }
 }
 
 .heading {
   @include title;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .list {
   @include list-zero;
-  line-height: 1.25;
+  line-height: 1;
 }
 
 .item {

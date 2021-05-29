@@ -2,6 +2,10 @@
 
 .el {
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   &::before {
     content: '';
     position: fixed;
@@ -25,4 +29,7 @@
 
 .main {
   @include container;
+  flex: 1 1 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }

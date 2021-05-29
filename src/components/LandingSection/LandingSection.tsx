@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {
   el,
-  image,
   content,
+  content_image,
+  image,
   heading,
   list,
   item,
@@ -11,17 +12,17 @@ import {
 type Props = {
   title: string
   list: string[]
-  image?: string
+  children?: React.ReactNode
 };
 
 const LandingSection: React.FC<Props> = (props: Props) => {
   return (
     <section className={el}>
-      {props.image && (
-        <div className={content}>
-          <img src={props.image} className={image} />
+      <div className={`${content} ${content_image}`}>
+        <div className={image}>
+          {props.children}
         </div>
-      )}
+      </div>
       <div className={content}>
         <h2 className={heading}>{props.title}</h2>
         <ul className={list}>

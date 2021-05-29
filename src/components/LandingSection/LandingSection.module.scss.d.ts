@@ -1,6 +1,7 @@
 declare namespace LandingSectionModuleScssNamespace {
   export interface ILandingSectionModuleScss {
     content: string;
+    content_image: string;
     el: string;
     heading: string;
     image: string;
