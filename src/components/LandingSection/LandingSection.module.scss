@@ -1,6 +1,15 @@
 @import '../../assets/scss/variables.scss';
 @import '../../assets/scss/mixins.scss';
 
+$base-rotation: 24deg;
+$offset-rotation: 10deg;
+
+@mixin diamond {
+  max-width: calc(100% - 1rem);
+  clip-path: polygon(0% 50%, 50% 0, 100% 50%, 50% 100%);
+  // clip-path: polygon(0% 0%, 60% 0, 100% 80%, 40% 80%); 
+}
+
 .el {
   position: relative;
   margin-bottom: 2rem;
@@ -25,26 +34,71 @@
   max-width: 300px;
   right: 0;
   @media (min-width: $sm) {
-    position: static;
+    position: relative;
     flex: 0 1 50%;
     max-width: unset;
     max-width: 450px;
-    height: 235px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backface-visibility: hidden;
+    @media (min-width: $sm) {
+      @include diamond;
+    }
+  }
+  
+  &::before {
+    transform: 
+      translate(1%, 12%) 
+      rotate($base-rotation - $offset-rotation - 2deg);
+    background-color: transparentize($accent, 0.6);
+  }
+
+  &::after {
+    transform: 
+      translate(11%, 3%) 
+      rotate($base-rotation + $offset-rotation);
+    background-color: transparentize($accent-light, 0.4);
+  }
+
+}
+
+:global(.dance) {
+  &::before {
+    background-color: transparentize($accent-light, 0.4);
+  }
+}
+
+:global(.web)  {
+  &::before {
+    background-color: transparentize($accent, 0.4);
+  }
+}
+
+:global(.art)  {
+  &::before {
+    background-color: transparentize($accent-variant, 0.4);
   }
 }
 
 .image {
   position: relative;
-  height: 100%;
   clip-path: polygon(0% 27%, 100% 96%, 66% 0);
   overflow: hidden;
   @media (min-width: $sm) {
-    transform: rotate(-30deg);
-    max-width: calc(100% - 1rem);
-    clip-path: polygon(25% 0%, 75% 0, 100% 50%, 75% 100%, 25% 100%, 50% 50%);
-    height: 150%;
+    @include diamond;
+    transform: rotate($base-rotation);
   }
   
+  // overlay
   &::after {
     content: '';
     position: absolute;
@@ -54,13 +108,13 @@
     right: 0;
     background-color: transparentize($bg-variant, 0.2);
     @media (min-width: $sm) {
-      background-color: transparentize($bg-variant, 0.3);
+      background-color: transparentize($accent-light, 0.6);
     }
   }
 
   & > div {
     @media (min-width: $sm) {
-      transform: rotate(30deg);
+      transform: rotate(-$base-rotation);
     }
   }
 }

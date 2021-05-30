@@ -7,10 +7,6 @@ body {
   color: $text;
 }
 
-.main a {
-  @include text-link;
-}
-
 blockquote {
   border-left-color: $accent;
   background-color: $bg-variant;
@@ -24,4 +20,8 @@ hr {
   margin-left: auto;
   margin-right: auto;
   background-color: $border;
+}
+
+.main a {
+  @include text-link;
 }
