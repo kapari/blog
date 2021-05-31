@@ -7,7 +7,6 @@ $offset-rotation: 10deg;
 @mixin diamond {
   max-width: calc(100% - 1rem);
   clip-path: polygon(0% 50%, 50% 0, 100% 50%, 50% 100%);
-  // clip-path: polygon(0% 0%, 60% 0, 100% 80%, 40% 80%); 
 }
 
 .el {
@@ -50,42 +49,51 @@ $offset-rotation: 10deg;
     left: 0;
     right: 0;
     backface-visibility: hidden;
-    @media (min-width: $sm) {
-      @include diamond;
-    }
+    @include diamond;
   }
   
   &::before {
     transform: 
       translate(1%, 12%) 
       rotate($base-rotation - $offset-rotation - 2deg);
-    background-color: transparentize($accent, 0.6);
   }
-
+  
   &::after {
     transform: 
       translate(11%, 3%) 
       rotate($base-rotation + $offset-rotation);
-    background-color: transparentize($accent-light, 0.4);
+    background-color: transparentize($accent-secondary, 0.8);
+    @media (min-width: $sm) {
+      background-color: transparentize($accent-secondary, 0.4);
+    }
   }
-
+  
 }
 
 :global(.dance) {
   &::before {
-    background-color: transparentize($accent-light, 0.4);
+    background-color: transparentize($accent-secondary-light, 0.1);
+    @media (min-width: $sm) {
+      background-color: transparentize($accent-secondary-light, 0.2);
+    }
   }
 }
 
 :global(.web)  {
   &::before {
-    background-color: transparentize($accent, 0.4);
+    background-color: transparentize($accent, 0.8);
+    @media (min-width: $sm) {
+      background-color: transparentize($accent, 0.4);
+    }
   }
 }
 
 :global(.art)  {
   &::before {
-    background-color: transparentize($accent-variant, 0.4);
+    background-color: transparentize($accent-tertiary, 0.8);
+    @media (min-width: $sm) {
+      background-color: transparentize($accent-tertiary, 0.4);
+    }
   }
 }
 
@@ -93,10 +101,8 @@ $offset-rotation: 10deg;
   position: relative;
   clip-path: polygon(0% 27%, 100% 96%, 66% 0);
   overflow: hidden;
-  @media (min-width: $sm) {
-    @include diamond;
-    transform: rotate($base-rotation);
-  }
+  @include diamond;
+  transform: rotate($base-rotation);
   
   // overlay
   &::after {
@@ -108,14 +114,12 @@ $offset-rotation: 10deg;
     right: 0;
     background-color: transparentize($bg-variant, 0.2);
     @media (min-width: $sm) {
-      background-color: transparentize($accent-light, 0.6);
+      background-color: transparentize($accent-secondary, 0.6);
     }
   }
 
   & > div {
-    @media (min-width: $sm) {
-      transform: rotate(-$base-rotation);
-    }
+    transform: rotate(-$base-rotation);
   }
 }
 

@@ -23,9 +23,11 @@ $text: $_off-black;
 $text-subtle: transparentize($_off-black, 0.2);
 $border: $_med-green;
 $accent: $_teal;
-$accent-light: $_med-green;
-$accent-variant: $_off-black;
 $accent-text: $_white;
+$accent-secondary-light: $_light-green;
+$accent-secondary: $_med-green;
+$accent-tertiary: $_off-black;
+
 
 // Sizes
 $margin-mobile: 2rem;
