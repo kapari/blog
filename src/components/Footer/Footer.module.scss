@@ -1,12 +1,23 @@
 @import '../../assets/scss/variables.scss';
 @import '../../assets/scss/mixins.scss';
 
+$padding-top: 2rem;
+
 .el {
   border-top: 1px solid $border;
   background-color: $bg-variant;
-  padding-top: 2rem;
+  padding-top: $padding-top;
   padding-bottom: 1rem;
   text-align: center;
+  &::before {
+    @include bg-pattern($bg-variant-hsl);
+    content: '';
+    transform: translateY(-$padding-top);
+    display: block;
+    height: 2.5rem;
+    border-bottom: 1px solid $border;
+    background-color: $bg-variant-strong;
+  }
 }
 
 .content {

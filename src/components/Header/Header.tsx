@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import Dropdown from './Dropdown'
 import Logo from './../Logo/Logo'
 import {
+  el,
   content,
   brandLink,
   logo,
@@ -45,7 +46,7 @@ const topLinks = [
 const Header: React.FC = () => {
 
   return (
-    <header>
+    <header className={el}>
       <div className={content}>
         <Link to="/" className={brandLink}>
           <span className={logo}>

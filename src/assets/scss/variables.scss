@@ -10,6 +10,7 @@ $_white: #fff;
 $_black: #111;
 
 $_pale-green: #f9faf4;
+$_pale-green-hsl: 70, 37%, 97%;
 $_light-green: #edf2e3;
 $_light-green-hsl: 80, 37%, 92%;
 $_med-green: #c1cfa0;
@@ -18,7 +19,11 @@ $_teal: #50777c;
 $_off-black: #393a41;
 
 $bg: $_pale-green;
+$bg-hsl: $_pale-green-hsl;
 $bg-variant: $_light-green;
+$bg-variant-hsl: $_light-green-hsl;
+$bg-variant-strong: $_med-green;
+$bg-variant-strong-hsl: $_med-green-hsl;
 $text: $_off-black;
 $text-subtle: transparentize($_off-black, 0.2);
 $border: $_med-green;
