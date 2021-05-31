@@ -114,7 +114,7 @@ $offset-rotation: 10deg;
     right: 0;
     background-color: transparentize($bg-variant, 0.2);
     @media (min-width: $sm) {
-      background-color: transparentize($accent-secondary, 0.6);
+      background-color: transparentize($bg-variant, 0.6);
     }
   }
 
