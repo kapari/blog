@@ -58,8 +58,8 @@ const Header: React.FC = () => {
         </Link>
         <nav>
           <ul className={nav__list}>
-            {topLinks.map(item => (
-              <li className={nav__item} key={item.url}>
+            {topLinks.map((item, key) => (
+              <li key={key} className={nav__item}>
                 {item.url && (
                   <Link to={item.url} className={nav__link}>
                     <span>{item.text}</span>
