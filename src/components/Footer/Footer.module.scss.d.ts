@@ -4,8 +4,6 @@ declare namespace FooterModuleScssNamespace {
     copyright: string;
     el: string;
     hidden: string;
-    link: string;
-    list: string;
   }
 }
 

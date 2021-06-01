@@ -27,25 +27,8 @@ $padding-top: 2rem;
   justify-content: center;
 }
 
-.list {
-  @include list-zero;
-  display: flex;
-  align-items: center;
-}
-
-.link {
-  @include transition;
-  padding: 0.5rem;
-  color: $text;
-  &:hover,
-  &:active,
-  &:focus {
-    color: $accent;
-    box-shadow: none;
-  }
-}
-
 .copyright {
+  margin-top: 1rem;
   margin-bottom: 0;
   font-size: 0.75rem;
 }
