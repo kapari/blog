@@ -7,6 +7,15 @@ module.exports = {
     twitterUsername: "@arielhkaplan",
   },
   plugins: [
+    'gatsby-plugin-image',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        breakpoints: [576, 768, 992, 1200],
+        placeholder: 'blurred',
+      }
+    },
     {
       resolve: 'gatsby-plugin-scss-typescript',
       options: {
