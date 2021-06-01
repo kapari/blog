@@ -27,7 +27,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo
-        title="Home | Ariel Kaplan"
+        title="Ariel Kaplan: Partner Dance & Web Development"
         description="Ariel dances and codes in Portland, OR"
       />
       <LandingHero />
