@@ -1,0 +1,28 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.list {
+  @include list-zero;
+  display: inline-flex;
+  align-items: center;
+}
+
+.link {
+  @include transition;
+  padding: 0.5rem;
+  color: $text;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $accent;
+    box-shadow: none;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+}
+
+.hidden {
+  @include visually-hidden;
+}
