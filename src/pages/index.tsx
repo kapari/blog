@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo/Seo';
-import LandingSection from '../components/LandingSection/LandingSection';
+import LandingSection from '../components/Landing/LandingSection/LandingSection';
+import LandingHero from '../components/Landing/LandingHero/LandingHero';
 import { StaticImage } from "gatsby-plugin-image";
 
 const danceList = [
@@ -29,17 +30,15 @@ const IndexPage = () => {
         title="Home | Ariel Kaplan"
         description="Ariel dances and codes in Portland, OR"
       />
-      {/* <h1>Hello</h1>
-      <p>I create websites and applications that are pleasant to look at, easy to use, and accessible for everyone.</p>
-      <p>I help people to be more present in their own bodies, so they can connect more deeply and confidently with others.</p> */}
+      <LandingHero />
       <LandingSection id="dance" title="Partner Dance" list={danceList}>
-        <StaticImage src="../images/dance.jpg" alt="" role="presentation" aspectRatio={45 / 26} />
+        <StaticImage src="../images/dance1.jpg" alt="" role="presentation" aspectRatio={45 / 26} />
       </LandingSection>
       <LandingSection id="web" title="Web Development" list={webList}>
-        <StaticImage src="../images/code.png" alt="" role="presentation" aspectRatio={45 / 26} />
+        <StaticImage src="../images/code1.png" alt="" role="presentation" aspectRatio={45 / 26} />
       </LandingSection>
       <LandingSection id="art" title="Art & Design" list={artList}>
-        <StaticImage src="../images/art.jpg" alt="" role="presentation" aspectRatio={45 / 26} />
+        <StaticImage src="../images/art1.jpg" alt="" role="presentation" aspectRatio={45 / 26} />
       </LandingSection>
     </Layout>
   );
