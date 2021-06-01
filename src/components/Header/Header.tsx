@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import Dropdown from './Dropdown'
-import Logo from './../Logo/Logo'
+import Dropdown from './Dropdown';
+import Logo from './../Logo/Logo';
 import {
   el,
   content,
@@ -26,7 +26,7 @@ const danceLinks = [
     url: '/dance/practice-playlists',
     text: 'Practice Playlists'
   }
-]
+];
 
 const topLinks = [
   {
@@ -40,11 +40,10 @@ const topLinks = [
   {
     url: '/about/',
     text: 'About'
-  },
-]
+  }
+];
 
 const Header: React.FC = () => {
-
   return (
     <header className={el}>
       <div className={content}>
@@ -52,9 +51,7 @@ const Header: React.FC = () => {
           <span className={logo}>
             <Logo />
           </span>
-          <span className={name}>
-            Ariel Kaplan
-          </span>
+          <span className={name}>Ariel Kaplan</span>
         </Link>
         <nav>
           <ul className={nav__list}>

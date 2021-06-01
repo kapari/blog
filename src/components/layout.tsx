@@ -5,7 +5,7 @@ import { el, main, contained } from './Layout.module.scss';
 
 type Props = {
   readonly children?: React.ReactNode;
-  full?: boolean
+  full?: boolean;
 };
 
 const Layout: React.FC<Props> = (props: Props) => {

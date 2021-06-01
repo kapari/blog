@@ -1,9 +1,5 @@
 import * as React from 'react';
-import {
-  hidden,
-  list,
-  link
-} from './Social.module.scss';
+import { hidden, list, link } from './Social.module.scss';
 import LinkedIn from '@material-ui/icons/LinkedIn';
 import Twitter from '@material-ui/icons/Twitter';
 import GitHub from '@material-ui/icons/GitHub';

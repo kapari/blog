@@ -3,7 +3,7 @@ import Social from '../../Social/Social';
 import { el, content, title } from './LandingHero.module.scss';
 
 type Props = {
-  children?: React.ReactNode
+  children?: React.ReactNode;
 };
 
 const LandingHero: React.FC<Props> = (props: Props) => {

@@ -1,32 +1,32 @@
-import * as React from "react"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import { useLocation } from '@reach/router';
+import { useStaticQuery, graphql } from 'gatsby';
 
 type Props = {
-  title: string
-  description: string
-  pathname?: string
-  article?: boolean
+  title: string;
+  description: string;
+  pathname?: string;
+  article?: boolean;
 };
 
 const SEO = ({ title, description, article }: Props) => {
-  const { pathname } = useLocation()
-  const { site } = useStaticQuery(query)
+  const { pathname } = useLocation();
+  const { site } = useStaticQuery(query);
 
   const {
     defaultTitle,
     titleTemplate,
     defaultDescription,
     siteUrl,
-    twitterUsername,
-  } = site.siteMetadata
+    twitterUsername
+  } = site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    url: `${siteUrl}${pathname}`,
-  }
+    url: `${siteUrl}${pathname}`
+  };
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
@@ -46,10 +46,10 @@ const SEO = ({ title, description, article }: Props) => {
         <meta name="twitter:description" content={seo.description} />
       )}
     </Helmet>
-  )
-}
+  );
+};
 
-export default SEO
+export default SEO;
 
 const query = graphql`
   query SEO {
@@ -63,4 +63,4 @@ const query = graphql`
       }
     }
   }
-`
+`;

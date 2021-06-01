@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'gatsby'
+import { Link } from 'gatsby';
 import useDropdownMenu from 'react-accessible-dropdown-menu-hook';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import {
@@ -13,14 +13,16 @@ import {
 } from './Dropdown.module.scss';
 
 type Props = {
-  children?: React.ReactNode
+  children?: React.ReactNode;
   list: {
-    url: string
-    text: string
-  }[]
+    url: string;
+    text: string;
+  }[];
 };
 
-const Dropdown: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (props: Props) => {
+const Dropdown: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (
+  props: Props
+) => {
   const { buttonProps, isOpen } = useDropdownMenu(2);
 
   return (
@@ -29,13 +31,14 @@ const Dropdown: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (props: Pr
         <span>{props.children}</span>
         <ExpandMore
           fontSize="small"
-          className={`${isOpen ? isExpanded : ''} ${dropdown__arrow}`} />
+          className={`${isOpen ? isExpanded : ''} ${dropdown__arrow}`}
+        />
       </button>
       <div
         className={`${isOpen ? isVisible : ''} ${dropdown__items}`}
-        role='menu'
+        role="menu"
       >
-        {props.list.map(item => {
+        {props.list.map((item) => {
           return (
             <Link
               to={item.url}
@@ -45,10 +48,10 @@ const Dropdown: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (props: Pr
             >
               {item.text}
             </Link>
-          )
+          );
         })}
       </div>
-    </div >
+    </div>
   );
 };
 
