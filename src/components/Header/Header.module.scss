@@ -57,17 +57,17 @@
   }
 }
 
-.nav__list {
+.navList {
   @include list-zero;
   display: none; // flex;
   align-items: center;
 }
 
-.nav__item {
+.navItem {
   flex: 0 0 auto;
 }
 
-.nav__link {
+.navLink {
   @include text-link($child: 'span');
   padding: 1rem;
   box-shadow: none;

@@ -5,9 +5,9 @@ declare namespace HeaderModuleScssNamespace {
     el: string;
     logo: string;
     name: string;
-    nav__item: string;
-    nav__link: string;
-    nav__list: string;
+    navItem: string;
+    navLink: string;
+    navList: string;
   }
 }
 

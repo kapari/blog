@@ -8,12 +8,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-image',
-    'gatsby-transformer-sharp',
+    `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
-        breakpoints: [576, 768, 992, 1200],
-        placeholder: 'blurred',
+        defaults: {
+          breakpoints: [576, 768, 992, 1200],
+          placeholder: 'blurred',
+        }
       }
     },
     {
@@ -24,6 +26,10 @@ module.exports = {
           modules: {
             namedExport: false,
           },
+        },
+        cssExtractOptions: {
+          filename: '[name].css',
+          chunkFilename: '[id].css',
         },
       },
     },
@@ -40,16 +46,11 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-remark`,
-    {
-      resolve: 'gatsby-transformer-remark',
-      plugins: ['gatsby-remark-typescript']
-    },
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
+          'gatsby-remark-typescript',
           {
             resolve: "gatsby-remark-codepen",
             options: {
@@ -60,6 +61,7 @@ module.exports = {
           }
         ]
       }
-    }
+    },
+    'gatsby-transformer-sharp'
   ]
 };

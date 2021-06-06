@@ -8,9 +8,9 @@ import {
   brandLink,
   logo,
   name,
-  nav__list,
-  nav__item,
-  nav__link
+  navList,
+  navItem,
+  navLink
 } from './Header.module.scss';
 
 const danceLinks = [
@@ -54,11 +54,11 @@ const Header: React.FC = () => {
           <span className={name}>Ariel Kaplan</span>
         </Link>
         <nav>
-          <ul className={nav__list}>
+          <ul className={navList}>
             {topLinks.map((item, key) => (
-              <li key={key} className={nav__item}>
+              <li key={key} className={navItem}>
                 {item.url && (
-                  <Link to={item.url} className={nav__link}>
+                  <Link to={item.url} className={navLink}>
                     <span>{item.text}</span>
                   </Link>
                 )}

@@ -18,6 +18,7 @@ $_med-green-hsl: 78, 33%, 72%;
 $_teal: #50777c;
 $_off-black: #393a41;
 
+// Theme variables
 $bg: $_pale-green;
 $bg-hsl: $_pale-green-hsl;
 $bg-variant: $_light-green;
@@ -26,7 +27,13 @@ $bg-variant-strong: $_med-green;
 $bg-variant-strong-hsl: $_med-green-hsl;
 $text: $_off-black;
 $text-subtle: transparentize($_off-black, 0.2);
+
+$bg-reverse: $_off-black;
+$text-reverse: $_white;
+$text-reverse-subtle: $_pale-green;
+
 $border: $_med-green;
+
 $accent: $_teal;
 $accent-text: $_white;
 $accent-secondary-light: $_light-green;

@@ -17,7 +17,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "npx stylelint \"./src/**/*.scss\" --fix",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "test-prod": "gatsby build && gatsby serve"
   },
   "dependencies": {
     "@material-ui/icons": "^4.11.2",
@@ -29,6 +30,7 @@
     "gatsby-plugin-sharp": "^3.6.0",
     "gatsby-plugin-typography": "^3.3.0",
     "gatsby-remark-codepen": "^0.1.1",
+    "gatsby-remark-typescript": "^0.2.2",
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.6.0",
