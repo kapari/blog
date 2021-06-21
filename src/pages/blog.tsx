@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Link from 'gatsby-link';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import Seo from '../components/Seo/Seo';
 
 interface Post {

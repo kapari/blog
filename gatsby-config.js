@@ -18,21 +18,7 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: 'gatsby-plugin-scss-typescript',
-      options: {
-        cssLoaderOptions: {
-          esModule: false,
-          modules: {
-            namedExport: false,
-          },
-        },
-        cssExtractOptions: {
-          filename: '[name].css',
-          chunkFilename: '[id].css',
-        },
-      },
-    },
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-typography',
       options: {

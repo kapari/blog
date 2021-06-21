@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import Seo from '../components/Seo/Seo';
 import LandingSection from '../components/Landing/LandingSection/LandingSection';
 import LandingHero from '../components/Landing/LandingHero/LandingHero';

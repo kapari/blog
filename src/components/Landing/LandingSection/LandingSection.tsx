@@ -1,13 +1,13 @@
 import * as React from 'react';
-import {
-  el,
-  content,
-  content_image,
-  image,
-  heading,
-  list,
-  item
-} from './LandingSection.module.scss';
+// import {
+//   el,
+//   content,
+//   content_image,
+//   image,
+//   heading,
+//   list,
+//   item
+// } from './LandingSection.module.scss';
 
 type Props = {
   id: string;
@@ -18,18 +18,17 @@ type Props = {
 
 const LandingSection: React.FC<Props> = (props: Props) => {
   return (
-    <section className={el}>
+    <section>
       <div
-        className={`${content} ${content_image} ${props.id}`}
         role="presentation"
       >
-        <div className={image}>{props.children}</div>
+        <div>{props.children}</div>
       </div>
-      <div className={content}>
-        <h2 className={heading}>{props.title}</h2>
-        <ul className={list}>
+      <div>
+        <h2>{props.title}</h2>
+        <ul>
           {props.list.map((listitem, key) => (
-            <li key={key} className={item}>
+            <li key={key}>
               {listitem}
             </li>
           ))}
