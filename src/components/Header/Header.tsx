@@ -1,12 +1,19 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import Dropdown from './Dropdown';
 import Logo from './../Logo/Logo';
 import Container from './../Layout/Container';
+import Hidden from './../Layout/VisuallyHidden';
 import theme from './../../utils/colors';
 import bp from './../../utils/sizes';
 import ColorBar from './../Layout/ColorBar';
+
+const Element = styled.header`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+`;
 
 const Accent = styled(ColorBar)`
   height: 20px;
@@ -16,7 +23,7 @@ const Content = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   @media (min-width: ${bp.xs}) {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -27,11 +34,11 @@ const LogoLink = styled(Link)`
   transition: color 0.25s ease-in-out;
   display: flex;
   align-items: center;
-  color: ${theme.fg};
+  color: ${theme.light.fg};
   &:hover,
   &:focus,
   &:active {
-    color: ${theme.primary};
+    color: ${theme.light.primary};
   }
 `;
 
@@ -45,15 +52,15 @@ const LogoWrapper = styled.span`
   }
 `;
 
-const Name = styled.span`
-  flex: 1 1 auto;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  @media (min-width: ${bp.xs}) {
-    font-size: 1rem;
-  }
-`;
+// const Name = styled.span`
+//   flex: 1 1 auto;
+//   margin-top: 0.5rem;
+//   margin-bottom: 0.5rem;
+//   font-size: 0.9rem;
+//   @media (min-width: ${bp.xs}) {
+//     font-size: 1rem;
+//   }
+// `;
 
 const danceLinks = [
   {
@@ -88,14 +95,14 @@ const topLinks = [
 const Header: React.FC = () => {
   const showNav = false
   return (
-    <header>
+    <Element>
       <Accent />
       <Content>
         <LogoLink to="/">
           <LogoWrapper>
             <Logo />
           </LogoWrapper>
-          <Name>Ariel Kaplan</Name>
+          <Hidden>Ariel Kaplan</Hidden>
         </LogoLink>
         {showNav && <nav>
           <ul>
@@ -106,15 +113,15 @@ const Header: React.FC = () => {
                     <span>{item.text}</span>
                   </Link>
                 )}
-                {item.children && (
+                {/* {item.children && (
                   <Dropdown list={item.children}>{item.text}</Dropdown>
-                )}
+                )} */}
               </li>
             ))}
           </ul>
         </nav>}
       </Content>
-    </header>
+    </Element>
   );
 };
 

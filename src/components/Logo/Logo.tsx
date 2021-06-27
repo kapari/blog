@@ -12,7 +12,7 @@ const Content = styled.g`
 `;
 
 const Path = styled.path`
-  fill: ${theme.fgAlt};
+  fill: ${theme.light.fgAlt};
 `;
 
 const Layout: React.FC = () => {

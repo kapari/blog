@@ -12,24 +12,41 @@ const colors = {
     hsl: '78, 33%, 72%'
   },
   teal: '#50777c',
+  darkTeal: '#404d53',
   blackish: '#393a41',
   black: '#111',
   white: '#fff'
 }
 
 const theme: {
-  [key: string]: string
+  [key: string]: {
+    [key: string]: string
+  }
 } = {
-  bg: colors.paleGreen.hex,
-  bgHsl: colors.paleGreen.hsl,
-  bgAlt: colors.lightGreen.hex,
-  bgAltHsl: colors.lightGreen.hsl,
-  bgAltStrong: colors.medGreen.hex,
-  fg: colors.black,
-  fgAlt: colors.blackish,
-  primary: colors.teal,
-  primaryContrast: colors.white,
-  border: colors.medGreen.hex
+  light: {
+    bg: colors.paleGreen.hex,
+    bgHsl: colors.paleGreen.hsl,
+    bgAlt: colors.lightGreen.hex,
+    bgAltHsl: colors.lightGreen.hsl,
+    bgAltStrong: colors.medGreen.hex,
+    fg: colors.black,
+    fgAlt: colors.blackish,
+    primary: colors.teal,
+    primaryAlt: colors.darkTeal,
+    primaryContrast: colors.white,
+    border: colors.medGreen.hex
+  },
+  dark: {
+    bg: colors.blackish,
+    bgAlt: colors.black,
+    bgAltStrong: colors.darkTeal,
+    fg: colors.white,
+    fgAlt: colors.paleGreen.hex,
+    primary: colors.medGreen.hex,
+    primaryAlt: colors.teal,
+    primaryContrast: colors.white,
+    border: colors.teal
+  }
 }
 
 export default theme

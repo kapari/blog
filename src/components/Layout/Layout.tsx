@@ -3,13 +3,16 @@ import styled from 'styled-components';
 import Header from './../Header/Header';
 import Footer from './../Footer/Footer';
 
-const Element = styled.div`
+const Element = styled.div<{ split: boolean }>`
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow-x: hidden;
+  ${props => props.split &&
+    'background-image: linear-gradient(90deg, rgba(237,242,227,1) 50%, rgba(57,58,65,1) 50%);'
+  }
 `;
 
 const Main = styled.main`
@@ -18,12 +21,11 @@ const Main = styled.main`
 
 type Props = {
   readonly children?: React.ReactNode;
-  full?: boolean;
 };
 
 const Layout: React.FC<Props> = (props: Props) => {
   return (
-    <Element>
+    <Element split>
       <Header />
       <Main>
         {props.children}

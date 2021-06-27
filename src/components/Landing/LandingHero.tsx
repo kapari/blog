@@ -7,7 +7,7 @@ import Container from '../Layout/Container';
 
 const Element = styled.section`
   margin-bottom: 3rem;
-  background-color: ${theme.bgAlt};
+  background-color: ${theme.light.bgAlt};
   padding-top: 2rem;
   padding-bottom: 1rem;
   text-align: center;
