@@ -16,7 +16,7 @@ const IndexPage = () => {
       title="Partner Dance"
       list={danceList}
       theme="light"
-      imgRight
+      first
     >
       <StaticImage
         src="../images/dance1.jpg"

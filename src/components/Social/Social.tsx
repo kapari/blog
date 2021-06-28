@@ -23,11 +23,11 @@ const Link = styled.a`
   display: flex;
   align-items: center;
   padding: 0.5rem;
-  color: ${theme.fg};
+  color: ${theme.dark.fg};
   &:hover,
   &:active,
   &:focus {
-    color: ${theme.primary};
+    color: ${theme.dark.primary};
     box-shadow: none;
   }
 

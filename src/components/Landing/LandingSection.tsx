@@ -1,28 +1,43 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import bp from './../../utils/sizes';
+import { breakpoints as bp, landing } from './../../utils/sizes';
 import theme from './../../utils/colors';
 import Check from '@material-ui/icons/Check';
 
 const Element = styled.section<{ theme: string }>`
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 50vh;
   text-align: center;
   ${props => props.theme &&
-    `color: ${theme[props.theme].fg};`
+    `background-color: ${theme[props.theme].bg};
+    color: ${theme[props.theme].fg};`
+  }
+  @media (min-width: ${bp.xs}) {
+    flex-direction: row;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  } 
+  @media (min-width: ${landing.split}) {    
+    min-height: 50vh;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 `;
 
-const Content = styled.div`
+const Content = styled.div<{ first: boolean }>`
   flex: 1 1 auto;
+  padding-bottom: 1.5rem;
+  ${props => !props.first &&
+    `padding-top: 1rem;
+    padding-bottom: 2rem;`
+  }
 `;
 
 const Heading = styled.h2<{ theme: string }>`
   margin: 1rem auto;
-  max-width: min-content;
   font-size: 1.5rem;
   ${props => props.theme &&
     `color: ${theme[props.theme].fgAlt};`
@@ -30,7 +45,10 @@ const Heading = styled.h2<{ theme: string }>`
   @media (min-width: ${bp.xs}) {
     font-size: 1.875rem;
   }
-  @media (min-width: ${bp.md}) {
+  @media (min-width: ${landing.split}) {
+    max-width: min-content;
+  }
+  @media (min-width: ${bp.lg}) {
     font-size: 2.4rem;
   }
 `;
@@ -50,24 +68,46 @@ const Item = styled.li`
 `;
 
 const ImageWrapper = styled.div<{
-  right: boolean,
+  first: boolean,
   tint: string,
   border: string,
-  width: number
+  sizeH: number,
+  sizeV: number
 }>`
   position: relative;
-  ${props => props.right &&
+  overflow: hidden;
+  ${props => props.first &&
     `order: 1;`
   }
-  ${props => props.right ?
-    `border-top-left-radius: ${props.width * 2}px;
-    border-bottom-left-radius: ${props.width * 2}px;` :
-    `border-top-right-radius: ${props.width * 2}px;
-    border-bottom-right-radius: ${props.width * 2}px;`
+  
+  @media (max-width: 575px) {
+    width: ${props => props.sizeV * 2}px;
+    height: ${props => props.sizeV}px;
+    ${props => props.first ?
+    // top half
+    `border-top-left-radius: ${props.sizeH * 2}px;
+      border-top-right-radius: ${props.sizeH * 2}px;` :
+    // bottom half
+    `border-bottom-left-radius: ${props.sizeH * 2}px;
+      border-bottom-right-radius: ${props.sizeH * 2}px;`
   }
-  width: ${props => props.width}px;
-  height: ${props => props.width * 2}px;
-  overflow: hidden;
+  }
+
+  @media (min-width: ${bp.xs}) {
+    width: ${props => props.sizeH}px;
+    height: ${props => props.sizeH * 2}px;
+    ${props => props.first ?
+    // left half
+    `border-top-left-radius: ${props.sizeH * 2}px;
+    border-bottom-left-radius: ${props.sizeH * 2}px;
+    border-right-width: 0;` :
+    // right half
+    `border-top-right-radius: ${props.sizeH * 2}px;
+    border-bottom-right-radius: ${props.sizeH * 2}px;
+    border-left-width: 0;`
+  }
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -76,20 +116,38 @@ const ImageWrapper = styled.div<{
     left: 0;
     right: 0;
     background-color: ${props => props.tint};
-    opacity: 0.3;
+    opacity: 0.4;
   }
+
   img {
     border: 3px solid ${props => props.border};
-    ${props => props.right ?
-    `border-top-left-radius: ${props.width * 2}px;
-      border-bottom-left-radius: ${props.width * 2}px;
-      border-right-width: 0px;` :
-    `border-top-right-radius: ${props.width * 2}px;
-      border-bottom-right-radius: ${props.width * 2}px;
-      border-left-width: 0px;`
-  }
     object-position: 33% center;
+    @media (max-width: 575px) {
+      ${props => props.first ?
+    // bottom half
+    `border-top-left-radius: ${props.sizeH * 2}px;
+        border-top-right-radius: ${props.sizeH * 2}px;
+        border-bottom-width: 0;` :
+    // top half
+    `border-bottom-left-radius: ${props.sizeH * 2}px;
+        border-bottom-right-radius: ${props.sizeH * 2}px;
+        border-top-width: 0;`
   }
+    }
+    @media (min-width: ${bp.xs}) {
+      ${props => props.first ?
+    // left half
+    `border-top-left-radius: ${props.sizeH * 2}px;
+        border-bottom-left-radius: ${props.sizeH * 2}px;
+        border-right-width: 0;` :
+    // right half
+    `border-top-right-radius: ${props.sizeH * 2}px;
+        border-bottom-right-radius: ${props.sizeH * 2}px;
+        border-left-width: 0;`
+  }
+    }
+  }
+
   * {
     // fix object-fit
     width: 100%;
@@ -103,22 +161,23 @@ type Props = {
   list: string[];
   children?: React.ReactNode;
   theme: string
-  imgRight?: boolean
+  first?: boolean
 };
 
 const LandingSection: React.FC<Props> = (props: Props) => {
   return (
     <Element theme={props.theme}>
       <ImageWrapper
-        right={props.imgRight || false}
+        first={props.first || false}
         tint={theme[props.theme].bgAltStrong}
-        border={theme[props.theme].fgAlt}
-        width={150}
+        border={theme[props.theme].primary}
+        sizeV={100}
+        sizeH={150}
         role="presentation"
       >
         {props.children}
       </ImageWrapper>
-      <Content>
+      <Content first={props.first || false}>
         <Heading theme={props.theme}>{props.title}</Heading>
         <List>
           {props.list.map((listitem, key) => (

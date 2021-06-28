@@ -16,7 +16,8 @@ const Element = styled.header`
 `;
 
 const Accent = styled(ColorBar)`
-  height: 20px;
+  height: 1rem;
+  border-bottom: 1px solid ${theme.light.bgAlt};
 `
 
 const Content = styled(Container)`
