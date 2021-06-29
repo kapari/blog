@@ -6,6 +6,9 @@ import Container from './../Layout/Container';
 import theme from './../../utils/colors';
 import { landing } from './../../utils/sizes';
 import ColorBar from './../Layout/ColorBar';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const Element = styled.header`
   position: relative;
@@ -96,7 +99,6 @@ const topLinks = [
 ];
 
 const Header: React.FC = () => {
-  const showNav = false
   return (
     <Element>
       <Accent />
@@ -107,22 +109,32 @@ const Header: React.FC = () => {
           </LogoWrapper>
           <Name>Ariel Kaplan</Name>
         </LogoLink>
-        {showNav && <nav>
-          <ul>
-            {topLinks.map((item, key) => (
-              <li key={key}>
-                {item.url && (
-                  <Link to={item.url}>
-                    <span>{item.text}</span>
-                  </Link>
-                )}
-                {/* {item.children && (
-                  <Dropdown list={item.children}>{item.text}</Dropdown>
-                )} */}
-              </li>
-            ))}
-          </ul>
-        </nav>}
+        <Navbar bg="light" expand="lg">
+          <Navbar.Toggle aria-controls="SiteNav" />
+          <Navbar.Collapse id="SiteNav">
+            <Nav className="mr-auto">
+              {topLinks.map((item, key) => (
+                item.url ? (
+                  <Nav.Link to={item.url || '/'} as={Link} key={key}>
+                    {item.text}
+                  </Nav.Link>
+                ) : (
+                  <NavDropdown title={item.text} id={key.toString()}>
+                    {item.children?.map((item, key) => (
+                      <NavDropdown.Item
+                        as={Link}
+                        to={item.url}
+                        key={key.toString()}
+                      >
+                        {item.text}
+                      </NavDropdown.Item>
+                    ))}
+                  </NavDropdown>
+                )
+              ))}
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       </Content>
     </Element>
   );

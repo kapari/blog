@@ -17,7 +17,8 @@
     "target": "es6"
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "gatsby-browser.ts"
   ],
   "exclude": [
     "node_modules",
