@@ -26,8 +26,6 @@ const Element = styled.section<{ theme: string, first: boolean }>`
   @media (min-width: ${landing.split}) {    
     min-height: 70vh;
     background-color: transparent;
-    padding-top: 0;
-    padding-bottom: 0;
   }
 `;
 
@@ -92,29 +90,10 @@ const ImageWrapper = styled.div<{
   @media (max-width: 575px) {
     width: ${props => props.sizeV * 2}px;
     height: ${props => props.sizeV}px;
-    ${props => props.first ?
-    // top half
-    `border-top-left-radius: ${props.sizeH * 2}px;
-      border-top-right-radius: ${props.sizeH * 2}px;` :
-    // bottom half
-    `border-bottom-left-radius: ${props.sizeH * 2}px;
-      border-bottom-right-radius: ${props.sizeH * 2}px;`
   }
-  }
-
   @media (min-width: ${bp.xs}) {
     width: ${props => props.sizeH}px;
     height: ${props => props.sizeH * 2}px;
-    ${props => props.first ?
-    // left half
-    `border-top-left-radius: ${props.sizeH * 2}px;
-    border-bottom-left-radius: ${props.sizeH * 2}px;
-    border-right-width: 0;` :
-    // right half
-    `border-top-right-radius: ${props.sizeH * 2}px;
-    border-bottom-right-radius: ${props.sizeH * 2}px;
-    border-left-width: 0;`
-  }
   }
 
   &::after {
@@ -131,19 +110,29 @@ const ImageWrapper = styled.div<{
   img {
     border: 3px solid ${props => props.border};
     object-position: 33% center;
+  }
+
+  &,
+  &::after,
+  img {
+    // Border Radius
     @media (max-width: 575px) {
+      width: ${props => props.sizeV * 2}px;
+      height: ${props => props.sizeV}px;
       ${props => props.first ?
-    // bottom half
-    `border-top-left-radius: ${props.sizeH * 2}px;
-        border-top-right-radius: ${props.sizeH * 2}px;
-        border-bottom-width: 0;` :
     // top half
-    `border-bottom-left-radius: ${props.sizeH * 2}px;
-        border-bottom-right-radius: ${props.sizeH * 2}px;
+    `border-top-left-radius: ${props.sizeV * 2}px;
+        border-top-right-radius: ${props.sizeV * 2}px;
+        border-bottom-width: 0;` :
+    // bottom half
+    `border-bottom-left-radius: ${props.sizeV * 2}px;
+        border-bottom-right-radius: ${props.sizeV * 2}px;
         border-top-width: 0;`
   }
     }
     @media (min-width: ${bp.xs}) {
+      width: ${props => props.sizeH}px;
+      height: ${props => props.sizeH * 2}px;
       ${props => props.first ?
     // left half
     `border-top-left-radius: ${props.sizeH * 2}px;
