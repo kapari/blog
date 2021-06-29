@@ -32,7 +32,7 @@ const Link = styled.a`
   }
 
   svg {
-    width: 1.2em; // material icon default too narrow
+    width: 1.5rem; // material icon default too narrow
     vertical-align: middle;
   }
 `;

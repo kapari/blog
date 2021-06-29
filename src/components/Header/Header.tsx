@@ -36,8 +36,8 @@ const LogoWrapper = styled.span`
   display: flex;
   flex: 0 0 auto;
   max-width: 60px;
+  max-height: 60px; // safari
   margin-left: -0.5rem;
-  margin-right: 0.5rem;
 `;
 
 const LogoLink = styled(Link)`
@@ -60,6 +60,7 @@ const Name = styled.span`
   flex: 1 1 auto;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 `;
