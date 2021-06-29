@@ -8,7 +8,7 @@ import GitHub from '@material-ui/icons/GitHub';
 
 const List = styled.ul`
   margin: 0;
-  padding: 0;
+  padding: 0 0 0.5rem 0;
   list-style-type: none;
   display: inline-flex;
   align-items: center;
@@ -23,15 +23,16 @@ const Link = styled.a`
   display: flex;
   align-items: center;
   padding: 0.5rem;
-  color: ${theme.dark.fg};
+  color: ${theme.light.fgAlt};
   &:hover,
   &:active,
   &:focus {
-    color: ${theme.dark.primary};
+    color: ${theme.light.primary};
     box-shadow: none;
   }
 
   svg {
+    width: 1.2em; // material icon default too narrow
     vertical-align: middle;
   }
 `;

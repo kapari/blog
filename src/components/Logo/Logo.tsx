@@ -8,7 +8,7 @@ const Svg = styled.svg`
 `;
 
 const Content = styled.g`
-  transform: rotate(102deg) translate(43%, -63%);
+  transform: rotate(107deg) translate(43%, -63%);
 `;
 
 const Path = styled.path`
@@ -18,9 +18,9 @@ const Path = styled.path`
 const Layout: React.FC = () => {
   return (
     <Svg
-      viewBox="0 0 430 450"
+      viewBox="0 0 400 550"
       height="400"
-      width="530"
+      width="550"
       xmlSpace="preserve"
       version="1.1"
       role="img"

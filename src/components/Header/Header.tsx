@@ -3,32 +3,41 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Logo from './../Logo/Logo';
 import Container from './../Layout/Container';
-import Hidden from './../Layout/VisuallyHidden';
 import theme from './../../utils/colors';
-import bp from './../../utils/sizes';
+import { landing } from './../../utils/sizes';
 import ColorBar from './../Layout/ColorBar';
 
 const Element = styled.header`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: ${theme.light.bg};
 `;
 
 const Accent = styled(ColorBar)`
-  height: 1rem;
+  height: 0.6rem;
   border-bottom: 1px solid ${theme.light.bgAlt};
 `
 
 const Content = styled(Container)`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  @media (min-width: ${bp.xs}) {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  @media (min-width: ${landing.split}) {
+    justify-content: space-between;
   }
+`;
+
+const LogoWrapper = styled.span`
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1) rotate(0deg);
+  display: flex;
+  flex: 0 0 auto;
+  max-width: 60px;
+  margin-left: -0.5rem;
+  margin-right: 0.5rem;
 `;
 
 const LogoLink = styled(Link)`
@@ -36,32 +45,24 @@ const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
   color: ${theme.light.fg};
+  text-decoration: none;
   &:hover,
   &:focus,
   &:active {
     color: ${theme.light.primary};
+    ${LogoWrapper} {
+      transform: scale(1.1) rotate(-3deg);
+    }
   }
 `;
 
-const LogoWrapper = styled.span`
-  display: flex;
-  flex: 0 0 auto;
-  max-width: 40px;
-  margin-left: -0.5rem;
-  @media (min-width: ${bp.xs}) {
-    max-width: 60px;
-  }
+const Name = styled.span`
+  flex: 1 1 auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 `;
-
-// const Name = styled.span`
-//   flex: 1 1 auto;
-//   margin-top: 0.5rem;
-//   margin-bottom: 0.5rem;
-//   font-size: 0.9rem;
-//   @media (min-width: ${bp.xs}) {
-//     font-size: 1rem;
-//   }
-// `;
 
 const danceLinks = [
   {
@@ -103,7 +104,7 @@ const Header: React.FC = () => {
           <LogoWrapper>
             <Logo />
           </LogoWrapper>
-          <Hidden>Ariel Kaplan</Hidden>
+          <Name>Ariel Kaplan</Name>
         </LogoLink>
         {showNav && <nav>
           <ul>

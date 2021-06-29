@@ -4,13 +4,16 @@ import { breakpoints as bp, landing } from './../../utils/sizes';
 import theme from './../../utils/colors';
 import Check from '@material-ui/icons/Check';
 
-const Element = styled.section<{ theme: string }>`
+const Element = styled.section<{ theme: string, first: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  ${props => props.first &&
+    `padding-top: 2rem;`
+  }
   ${props => props.theme &&
     `background-color: ${theme[props.theme].bg};
     color: ${theme[props.theme].fg};`
@@ -21,7 +24,8 @@ const Element = styled.section<{ theme: string }>`
     padding-bottom: 2rem;
   } 
   @media (min-width: ${landing.split}) {    
-    min-height: 50vh;
+    min-height: 70vh;
+    background-color: transparent;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -39,6 +43,7 @@ const Content = styled.div<{ first: boolean }>`
 const Heading = styled.h2<{ theme: string }>`
   margin: 1rem auto;
   font-size: 1.5rem;
+  letter-spacing: 0.03em;
   ${props => props.theme &&
     `color: ${theme[props.theme].fgAlt};`
   }
@@ -57,6 +62,7 @@ const List = styled.ul`
   margin: 0;
   padding: 0;
   list-style-type: none;
+  letter-spacing: 0.1em;
 `;
 
 const Item = styled.li`
@@ -166,7 +172,7 @@ type Props = {
 
 const LandingSection: React.FC<Props> = (props: Props) => {
   return (
-    <Element theme={props.theme}>
+    <Element theme={props.theme} first={props.first || false}>
       <ImageWrapper
         first={props.first || false}
         tint={theme[props.theme].bgAltStrong}

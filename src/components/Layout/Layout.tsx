@@ -15,7 +15,7 @@ const Element = styled.div<{ split: boolean }>`
   background-color: ${theme.light.bg};
   @media (min-width: ${landing.split}) {
     ${props => props.split &&
-    'background-image: linear-gradient(90deg, rgba(237,242,227,1) 50%, rgba(57,58,65,1) 50%);'
+    `background-image: linear-gradient(90deg, ${theme.light.bg} 50%, ${theme.dark.bg} 50%);`
   }
   }
 `;

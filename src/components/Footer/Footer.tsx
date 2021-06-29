@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Container from './../Layout/Container';
 import Hidden from '../Layout/VisuallyHidden';
 import theme from './../../utils/colors';
-import bp from './../../utils/sizes';
+import { landing } from './../../utils/sizes';
 import Social from '../Social/Social';
-import ColorBar from './../Layout/ColorBar';
+// import ColorBar from './../Layout/ColorBar';
 
 // const Accent = styled(ColorBar)`
 //   flex: 1 0 100%;
@@ -13,27 +13,29 @@ import ColorBar from './../Layout/ColorBar';
 // `;
 
 const Element = styled.footer`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: ${theme.light.fgAlt};
 `;
 
 const Content = styled(Container)`
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @media (min-width: ${bp.xs}) {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  @media (min-width: ${landing.split}) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
 const Copyright = styled.p`
   margin-bottom: 0;
-  color: ${theme.light.fg};
+  font-size: 0.8rem;
+  @media (min-width: ${landing.split}) {
+    color: ${theme.dark.fgAlt};
+  }
 `;
 
 type Props = {
@@ -51,9 +53,9 @@ const Footer: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (
   return (
     <Element>
       <Content>
-        <Copyright>&copy; Copyright {year} Ariel Kaplan</Copyright>
         <Hidden>Contact</Hidden>
         <Social />
+        <Copyright>&copy; {year} Ariel Kaplan</Copyright>
       </Content>
       {/* <Accent /> */}
     </Element>
