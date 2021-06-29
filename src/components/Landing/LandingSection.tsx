@@ -67,10 +67,13 @@ const List = styled.ul`
 
 const Item = styled.li`
   line-height: 1.4;
-  svg {
-    margin-right: 0.25rem;
-    vertical-align: text-bottom;
-  }
+`;
+
+const Icon = styled(Check) <{ theme: string }>`
+  max-width: 1.5em;
+  margin-right: 0.25rem;
+  vertical-align: text-bottom;
+  fill: ${props => theme[props.theme].fgAlt};
 `;
 
 const ImageWrapper = styled.div<{
@@ -188,7 +191,7 @@ const LandingSection: React.FC<Props> = (props: Props) => {
         <List>
           {props.list.map((listitem, key) => (
             <Item key={key}>
-              <Check />
+              <Icon theme={props.theme} />
               {listitem}
             </Item>
           ))}
