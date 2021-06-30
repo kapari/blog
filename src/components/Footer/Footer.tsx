@@ -5,14 +5,9 @@ import Hidden from '../Layout/VisuallyHidden';
 import theme from './../../utils/colors';
 import { landing } from './../../utils/sizes';
 import Social from '../Social/Social';
-// import ColorBar from './../Layout/ColorBar';
-
-// const Accent = styled(ColorBar)`
-//   flex: 1 0 100%;
-//   height: 1rem;
-// `;
 
 const Element = styled.footer`
+  position: relative;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -27,19 +22,23 @@ const Content = styled(Container)`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: -0.75rem; // visual alignment
   }
 `;
 
-const Copyright = styled.p`
+const Copyright = styled.p<{ split?: boolean | undefined }>`
   margin-bottom: 0;
   font-size: 0.8rem;
-  @media (min-width: ${landing.split}) {
-    color: ${theme.dark.fgAlt};
+  ${props => props.split &&
+    `@media (min-width: ${landing.split}) {
+      color: ${theme.dark.fgAlt};
+    }`
   }
 `;
 
 type Props = {
   children?: React.ReactNode;
+  split?: boolean
 };
 
 const Footer: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (
@@ -55,9 +54,8 @@ const Footer: React.FC<Props & React.HTMLAttributes<HTMLElement>> = (
       <Content>
         <Hidden>Contact</Hidden>
         <Social />
-        <Copyright>&copy; {year} Ariel Kaplan</Copyright>
+        <Copyright split={props.split}>&copy; {year} Ariel Kaplan</Copyright>
       </Content>
-      {/* <Accent /> */}
     </Element>
   );
 };

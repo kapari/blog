@@ -6,9 +6,13 @@ module.exports = {
     url: "https://www.arielkaplan.com",
     twitterUsername: "@arielhkaplan",
   },
+  flags: {
+    DEV_SSR: true
+  },
   plugins: [
     'gatsby-plugin-image',
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: 'gatsby-plugin-sharp',
       options: {

@@ -1,27 +1,25 @@
-import * as React from "react"
-import { graphql } from "gatsby"
-import Layout from '../components/Layout';
+import * as React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout/Layout';
 import Seo from '../components/Seo/Seo';
 
 interface Props {
   readonly data: {
     markdownRemark: {
       frontmatter: {
-        title: string
-        description?: string
-        date: string
-        slug: string
-        category: string
-      }
-      html: string,
-    }
-  }
+        title: string;
+        description?: string;
+        date: string;
+        slug: string;
+        category: string;
+      };
+      html: string;
+    };
+  };
 }
 
-const Template = ({
-  data,
-}: Props) => {
-  const { markdownRemark } = data
+const Template = ({ data }: Props) => {
+  const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   return (
     <Layout>
@@ -35,10 +33,10 @@ const Template = ({
       {frontmatter.date && <p>{frontmatter.date}</p>}
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
-  )
-}
+  );
+};
 
-export default Template
+export default Template;
 
 export const pageQuery = graphql`
   query($id: String!) {
@@ -51,4 +49,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

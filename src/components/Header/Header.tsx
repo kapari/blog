@@ -40,7 +40,7 @@ const LogoWrapper = styled.span`
   flex: 0 0 auto;
   max-width: 60px;
   max-height: 60px; // safari
-  margin-left: -0.5rem;
+  margin-left: -1rem;
 `;
 
 const LogoLink = styled(Link)`

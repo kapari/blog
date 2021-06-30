@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Header from './../Header/Header';
 import Footer from './../Footer/Footer';
 import theme from './../../utils/colors';
-import { landing } from './../../utils/sizes';
+import Container from './Container';
 
-const Element = styled.div<{ split: boolean }>`
+const Element = styled.div`
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -13,11 +13,6 @@ const Element = styled.div<{ split: boolean }>`
   justify-content: space-between;
   overflow-x: hidden;
   background-color: ${theme.light.bg};
-  @media (min-width: ${landing.split}) {
-    ${props => props.split &&
-    `background-image: linear-gradient(90deg, ${theme.light.bg} 50%, ${theme.dark.bg} 50%);`
-  }
-  }
 `;
 
 const Main = styled.main`
@@ -26,16 +21,19 @@ const Main = styled.main`
 
 type Props = {
   readonly children?: React.ReactNode;
+  landing?: boolean
 };
 
 const Layout: React.FC<Props> = (props: Props) => {
   return (
-    <Element split>
+    <Element>
       <Header />
       <Main>
-        {props.children}
+        <Container full={props.landing}>
+          {props.children}
+        </Container>
       </Main>
-      <Footer />
+      <Footer split={props.landing} />
     </Element>
   );
 };
