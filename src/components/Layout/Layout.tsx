@@ -15,8 +15,12 @@ const Element = styled.div`
   background-color: ${theme.light.bg};
 `;
 
-const Main = styled.main`
+const Main = styled.main<{ padded: boolean | undefined }>`
   flex: 1 1 auto;
+  ${props => props.padded && `
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  `}
 `;
 
 type Props = {
@@ -28,7 +32,7 @@ const Layout: React.FC<Props> = (props: Props) => {
   return (
     <Element>
       <Header />
-      <Main>
+      <Main padded={!props.landing}>
         <Container full={props.landing}>
           {props.children}
         </Container>
