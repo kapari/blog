@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Logo from './../Logo/Logo';
 import Container from './../Layout/Container';
 import theme from './../../utils/colors';
-import { landing } from './../../utils/sizes';
+import { breakpoints as bp } from './../../utils/sizes';
 import ColorBar from './../Layout/ColorBar';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -22,15 +22,22 @@ const Accent = styled(ColorBar)`
   border-bottom: 1px solid ${theme.light.bgAlt};
 `
 
-const Content = styled(Container)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  @media (min-width: ${landing.split}) {
-    justify-content: space-between;
+const Content = styled(Container)``;
+
+const CollapseNav = styled(Navbar.Collapse)`
+  flex: 1 1 100%;
+  @media (min-width: ${bp.sm}) {
+    flex: 0 0 auto;
   }
+`;
+
+const NavWrap = styled(Navbar)`
+  background-color: transparent !important; // override bs
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @media (min-width: ${bp.sm}) {
+    flex-wrap: nowrap;
+  } 
 `;
 
 const LogoWrapper = styled.span`
@@ -64,8 +71,22 @@ const Name = styled.span`
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding-left: 0.5rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+`;
+
+const Toggle = styled(Navbar.Toggle)`
+  border-radius: 50%;
+  && { // specificity override for bs
+    color: ${theme.light.fgAlt};
+    box-shadow: 0 0 0 .2rem transparent;
+    &:hover, 
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 .2rem ${theme.light.bgAltStrong};
+    }
+  }
 `;
 
 const danceLinks = [
@@ -103,16 +124,18 @@ const Header: React.FC = () => {
     <Element>
       <Accent />
       <Content>
-        <LogoLink to="/">
-          <LogoWrapper>
-            <Logo />
-          </LogoWrapper>
-          <Name>Ariel Kaplan</Name>
-        </LogoLink>
-        <Navbar bg="light" expand="lg">
-          <Navbar.Toggle aria-controls="SiteNav" />
-          <Navbar.Collapse id="SiteNav">
-            <Nav className="mr-auto">
+        <NavWrap bg="light" expand="md">
+          <Navbar.Brand>
+            <LogoLink to="/">
+              <LogoWrapper>
+                <Logo />
+              </LogoWrapper>
+              <Name>Ariel Kaplan</Name>
+            </LogoLink>
+          </Navbar.Brand>
+          <Toggle aria-controls="SiteNav" />
+          <CollapseNav id="SiteNav">
+            <Nav>
               {topLinks.map((item, key) => (
                 item.url ? (
                   <Nav.Link to={item.url || '/'} as={Link} key={key}>
@@ -133,8 +156,8 @@ const Header: React.FC = () => {
                 )
               ))}
             </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+          </CollapseNav>
+        </NavWrap>
       </Content>
     </Element>
   );
