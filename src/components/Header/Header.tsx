@@ -1,14 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import NavLinks from './NavLinks';
 import Logo from './../Logo/Logo';
 import Container from './../Layout/Container';
 import theme from './../../utils/colors';
 import { breakpoints as bp } from './../../utils/sizes';
 import ColorBar from './../Layout/ColorBar';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const Element = styled.header`
   position: relative;
@@ -77,47 +76,17 @@ const Name = styled.span`
 `;
 
 const Toggle = styled(Navbar.Toggle)`
-  border-radius: 50%;
+  border: 0;
   && { // specificity override for bs
+    box-shadow: none;
     color: ${theme.light.fgAlt};
-    box-shadow: 0 0 0 .2rem transparent;
     &:hover, 
     &:active,
     &:focus {
-      box-shadow: 0 0 0 .2rem ${theme.light.bgAltStrong};
+      color: ${theme.light.primary};
     }
   }
 `;
-
-const danceLinks = [
-  {
-    url: '/dance/event-calendar',
-    text: 'Event Calendar'
-  },
-  {
-    url: '/dance/classes',
-    text: 'Class Offerings'
-  },
-  {
-    url: '/dance/practice-playlists',
-    text: 'Practice Playlists'
-  }
-];
-
-const topLinks = [
-  {
-    text: 'Dance',
-    children: danceLinks
-  },
-  {
-    url: '/tech/css-art',
-    text: 'Tech'
-  },
-  {
-    url: '/about/',
-    text: 'About'
-  }
-];
 
 const Header: React.FC = () => {
   return (
@@ -135,27 +104,7 @@ const Header: React.FC = () => {
           </Navbar.Brand>
           <Toggle aria-controls="SiteNav" />
           <CollapseNav id="SiteNav">
-            <Nav>
-              {topLinks.map((item, key) => (
-                item.url ? (
-                  <Nav.Link to={item.url || '/'} as={Link} key={key}>
-                    {item.text}
-                  </Nav.Link>
-                ) : (
-                  <NavDropdown title={item.text} id={key.toString()}>
-                    {item.children?.map((item, key) => (
-                      <NavDropdown.Item
-                        as={Link}
-                        to={item.url}
-                        key={key.toString()}
-                      >
-                        {item.text}
-                      </NavDropdown.Item>
-                    ))}
-                  </NavDropdown>
-                )
-              ))}
-            </Nav>
+            <NavLinks />
           </CollapseNav>
         </NavWrap>
       </Content>
