@@ -4,7 +4,7 @@ import Container from './../Layout/Container';
 import Hidden from '../Layout/VisuallyHidden';
 import theme from './../../utils/colors';
 import { landing } from './../../utils/sizes';
-import Social from '../Social/Social';
+import Social from './Social';
 
 const Element = styled.footer`
   position: relative;
@@ -22,7 +22,6 @@ const Content = styled(Container)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: -0.75rem; // visual alignment
   }
 `;
 

@@ -1,13 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Hidden from '../Layout/VisuallyHidden';
-import theme from './../../utils/colors';
+import theme from '../../utils/colors';
 import LinkedIn from '@material-ui/icons/LinkedIn';
 import Twitter from '@material-ui/icons/Twitter';
 import GitHub from '@material-ui/icons/GitHub';
 
 const List = styled.ul`
-  margin: 0;
+  margin: 0 0 0 -0.75rem;
   padding: 0 0 0.5rem 0;
   list-style-type: none;
   display: inline-flex;
