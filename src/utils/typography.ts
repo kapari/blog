@@ -14,6 +14,14 @@ const typography = new Typography({
   bodyWeight: 300,
   includeNormalize: true,
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
+    'main a': {
+      transition: 'box-shadow 0.25s ease-in-out',
+      color: colors.light.fg,
+      boxShadow: `0 1px ${colors.light.border}`
+    },
+    'main a:hover, a:focus, a:active': {
+      boxShadow: `0 3px ${colors.light.border}`
+    },
     blockquote: {
       ...adjustFontSizeTo('20px'),
       color: colors.light.fgAlt,
@@ -25,6 +33,9 @@ const typography = new Typography({
     'blockquote > :last-child': {
       marginBottom: 0,
     },
+    iframe: {
+      maxWidth: '100%'
+    }
   })
 })
 

@@ -8,6 +8,7 @@ import theme from './../../utils/colors';
 import { breakpoints as bp } from './../../utils/sizes';
 import ColorBar from './../Layout/ColorBar';
 import Navbar from 'react-bootstrap/Navbar';
+import Menu from '@material-ui/icons/Menu';
 
 const Element = styled.header`
   position: relative;
@@ -18,7 +19,6 @@ const Element = styled.header`
 
 const Accent = styled(ColorBar)`
   height: 0.6rem;
-  border-bottom: 1px solid ${theme.light.bgAlt};
 `
 
 const Content = styled(Container)``;
@@ -37,6 +37,10 @@ const NavWrap = styled(Navbar)`
   @media (min-width: ${bp.sm}) {
     flex-wrap: nowrap;
   } 
+`;
+
+const Brand = styled(Navbar.Brand)`
+  margin-right: 0;
 `;
 
 const LogoWrapper = styled.span`
@@ -58,6 +62,7 @@ const LogoLink = styled(Link)`
   &:hover,
   &:focus,
   &:active {
+    box-shadow: none;
     color: ${theme.light.primary};
     ${LogoWrapper} {
       transform: scale(1.1) rotate(-3deg);
@@ -73,10 +78,20 @@ const Name = styled.span`
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  line-height: 1.2;
+  span {
+    display: block;
+    @media (min-width: ${bp.xs}) {
+      display: inline;
+    }
+  }
 `;
 
 const Toggle = styled(Navbar.Toggle)`
+  transition: color 0.25s ease-in-out;
+  margin-right: -0.5rem;
   border: 0;
+  cursor: pointer;
   && { // specificity override for bs
     box-shadow: none;
     color: ${theme.light.fgAlt};
@@ -88,21 +103,32 @@ const Toggle = styled(Navbar.Toggle)`
   }
 `;
 
+const MenuIcon = styled(Menu)`
+  max-width: 2rem;
+  && {
+    font-size: 2rem;
+  }
+`;
+
 const Header: React.FC = () => {
   return (
     <Element>
       <Accent />
       <Content>
         <NavWrap bg="light" expand="md">
-          <Navbar.Brand>
+          <Brand>
             <LogoLink to="/">
               <LogoWrapper>
                 <Logo />
               </LogoWrapper>
-              <Name>Ariel Kaplan</Name>
+              <Name>
+                <span>Ariel</span> Kaplan
+              </Name>
             </LogoLink>
-          </Navbar.Brand>
-          <Toggle aria-controls="SiteNav" />
+          </Brand>
+          <Toggle aria-controls="SiteNav">
+            <MenuIcon />
+          </Toggle>
           <CollapseNav id="SiteNav">
             <NavLinks />
           </CollapseNav>

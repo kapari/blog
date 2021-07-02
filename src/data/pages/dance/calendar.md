@@ -1,13 +1,11 @@
 ---
-slug: "/dance/event-calendar/"
-title: "Event Calendar"
-subtitle: ""
-category: "dance"
+slug: '/dance/event-calendar/'
+title: 'Event Calendar'
+subtitle: ''
+category: 'dance'
 published: true
-description: "Overview on upcoming dance events."
+description: 'Overview on upcoming dance events.'
 ---
-
-I'm currently taking a pandemic break from teaching, but there are a number of classes still happening at Uptown!
 
 See the full schedule on the [Uptown website](http://uptownballroom.net/studio-schedule/).
 

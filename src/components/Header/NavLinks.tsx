@@ -1,7 +1,8 @@
 import * as React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'gatsby';
-// import theme from './../../utils/colors';
+import theme from './../../utils/colors';
+import bp from './../../utils/sizes';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
@@ -27,27 +28,71 @@ const topLinks = [
   },
   {
     url: '/tech/css-art',
-    text: 'Tech'
+    text: 'CSS Art'
   },
-  {
-    url: '/about/',
-    text: 'About'
-  }
+  // {
+  //   url: '/about/',
+  //   text: 'About'
+  // }
 ];
+
+const linkStyles = `
+  transition: color 0.25s ease-in-out;
+  background-color: ${theme.light.bg};
+  padding: 0.5rem 1rem;
+  color: ${theme.light.fgAlt};
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: none;
+    background-color: ${theme.light.bg};
+    color: ${theme.light.primary};
+  }
+`;
+
+const Element = styled(Nav)`
+  @media (min-width: ${bp.sm}) {
+    align-items: center;
+  }
+  .nav-link.nav-link { // specificity for bs
+    ${linkStyles}
+  }
+  .dropdown-menu {
+    border-color: ${theme.light.bgAlt};
+    border-radius: 0;
+    background-color: ${theme.light.bgAltStrong};  
+    background-image: linear-gradient(
+      120deg, 
+      ${theme.light.bgAltStrong} 0%, 
+      ${theme.light.primary} 100%
+    );
+    padding: 0.1rem;
+  }
+`;
+
+const NavLink = styled(Nav.Link)`
+  ${linkStyles}
+`;
+
+const NestedLink = styled(Link)`
+  ${linkStyles}
+`;
 
 const NavLinks: React.FC = () => {
   return (
-    <Nav>
+    <Element>
       {topLinks.map((item, key) => (
         item.url ? (
-          <Nav.Link to={item.url || '/'} as={Link} key={key}>
+          <NavLink to={item.url || '/'} as={Link} key={key}>
             {item.text}
-          </Nav.Link>
+          </NavLink>
         ) : (
           <NavDropdown title={item.text} id={key.toString()}>
             {item.children?.map((item, key) => (
               <NavDropdown.Item
-                as={Link}
+                as={NestedLink}
                 to={item.url}
                 key={key.toString()}
               >
@@ -57,7 +102,7 @@ const NavLinks: React.FC = () => {
           </NavDropdown>
         )
       ))}
-    </Nav>
+    </Element>
   );
 };
 
