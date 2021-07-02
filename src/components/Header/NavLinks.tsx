@@ -60,7 +60,7 @@ const Element = styled(Nav)`
     ${linkStyles}
   }
   .dropdown-menu {
-    border-color: ${theme.light.bgAlt};
+    border: 0;
     border-radius: 0;
     background-color: ${theme.light.bgAltStrong};  
     background-image: linear-gradient(
