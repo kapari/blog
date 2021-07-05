@@ -53,7 +53,7 @@ These pair of workshops are for the very fundamentals of leading and following. 
 
 For dancers who
 
-- A newer and want a framework to help you make sense of what they're learning in other style-specific classes
+- Are newer and want a framework to help you make sense of what they're learning in other style-specific classes
 - Are more experienced and want to try their hand at the other role
 - Want to clarify and refine the communication with their partner
 - Are dance nerds? :)
