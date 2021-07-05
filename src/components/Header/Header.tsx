@@ -110,10 +110,16 @@ const MenuIcon = styled(Menu)`
   }
 `;
 
-const Header: React.FC = () => {
+type Props = {
+  readonly children?: React.ReactNode;
+};
+
+
+const Header: React.FC<Props> = (props: Props) => {
   return (
     <Element>
       <Accent />
+      { props.children}
       <Content>
         <NavWrap bg="light" expand="md">
           <Brand>
