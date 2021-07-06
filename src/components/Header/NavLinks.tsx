@@ -30,10 +30,10 @@ const topLinks = [
     url: '/tech/css-art',
     text: 'CSS Art'
   },
-  // {
-  //   url: '/about/',
-  //   text: 'About'
-  // }
+  {
+    url: '/about/',
+    text: 'About'
+  }
 ];
 
 const linkStyles = `
