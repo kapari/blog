@@ -15,7 +15,7 @@ const colors = {
   darkTeal: '#404d53',
   blackish: '#393a41',
   black: '#111',
-  white: '#fff'
+  white: '#fff',
 }
 
 const theme: {
@@ -34,7 +34,9 @@ const theme: {
     primary: colors.teal,
     primaryAlt: colors.darkTeal,
     primaryContrast: colors.white,
-    border: colors.medGreen.hex
+    border: colors.medGreen.hex,
+    gradient: `linear-gradient(120deg, ${colors.medGreen.hex} 0%,
+      ${colors.teal} 100%)`
   },
   dark: {
     bg: colors.blackish,
@@ -45,7 +47,9 @@ const theme: {
     primary: colors.medGreen.hex,
     primaryAlt: colors.teal,
     primaryContrast: colors.white,
-    border: colors.teal
+    border: colors.teal,
+    gradient: `linear-gradient(120deg, ${colors.medGreen.hex} 0%,
+        ${colors.teal} 100%)`
   }
 }
 
