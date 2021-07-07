@@ -2,8 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { landing } from './../../utils/sizes';
 import theme from './../../utils/colors';
+import { motion, useReducedMotion } from "framer-motion"
 
-const Element = styled.div`
+const Element = styled(motion.div)`
   width: 100%;
   @media (min-width: ${landing.split}) {
     display: flex;
@@ -24,7 +25,7 @@ const Element = styled.div`
   }
 `;
 
-const Column = styled.div`
+const Column = styled(motion.div)`
   @media (min-width: ${landing.split}) {
     flex: 1 1 50%;
   }
@@ -37,12 +38,24 @@ type Props = {
 };
 
 const LandingSection: React.FC<Props> = (props: Props) => {
+  const shouldReduceMotion = useReducedMotion()
+
+  const left = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : -50 },
+    visible: { opacity: 1, y: 0 }
+  }
+
+  const right = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 50 },
+    visible: { opacity: 1, y: 0 }
+  }
+
   return (
-    <Element>
-      <Column>
+    <Element initial="hidden" animate="visible">
+      <Column variants={left} transition={{ duration: 1.5 }}>
         {props.left}
       </Column>
-      <Column>
+      <Column variants={right} transition={{ duration: 1.5 }}>
         {props.right}
       </Column>
     </Element>

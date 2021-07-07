@@ -4,6 +4,7 @@ import Header from './../Header/Header';
 import Footer from './../Footer/Footer';
 import theme from './../../utils/colors';
 import Container from './Container';
+import { motion } from "framer-motion"
 
 const Element = styled.div`
   position: relative;
@@ -15,7 +16,7 @@ const Element = styled.div`
   background-color: ${theme.light.bg};
 `;
 
-const Main = styled.main<{ padded: boolean | undefined }>`
+const Main = styled(motion.main) <{ padded: boolean | undefined }>`
   flex: 1 1 auto;
   ${props => props.padded && `
     padding-top: 3rem;
@@ -51,6 +52,11 @@ type Props = {
 };
 
 const Layout: React.FC<Props> = (props: Props) => {
+  const fadeIn = {
+    hidden: { opacity: props.landing ? 1 : 0 },
+    visible: { opacity: 1 }
+  }
+
   return (
     <Element>
       <Header>
@@ -58,7 +64,7 @@ const Layout: React.FC<Props> = (props: Props) => {
           Skip to Main Content
         </SkipLink>
       </Header>
-      <Main padded={!props.landing}>
+      <Main padded={!props.landing} initial="hidden" animate="visible" variants={fadeIn} transition={{ duration: 1 }}>
         <a id="main"></a>
         <Container full={props.landing}>
           {props.children}
