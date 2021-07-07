@@ -15,26 +15,42 @@ const typography = new Typography({
   includeNormalize: true,
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
     'main a': {
-      transition: 'box-shadow 0.25s ease-in-out',
+      transition: 'all 0.25s ease-in-out',
+      boxShadow: `0 2px ${colors.light.border}`,
       color: colors.light.fg,
-      boxShadow: `0 1px ${colors.light.border}`
+      textDecoration: 'none'
     },
     'main a:hover, a:focus, a:active': {
-      boxShadow: `0 3px ${colors.light.border}`
+      boxShadow: `0 3px ${colors.light.primary}`,
     },
-    blockquote: {
+    figure: {
       ...adjustFontSizeTo('20px'),
       color: colors.light.fgAlt,
-      fontStyle: 'italic',
-      paddingLeft: rhythm(13 / 16),
-      marginLeft: rhythm(-1),
-      borderLeft: `${rhythm(3 / 16)} solid ${colors.light.primary}`,
+      borderLeft: `${rhythm(1 / 2)} solid ${colors.light.border}`,
+      backgroundColor: colors.light.bgAlt,
+      paddingTop: rhythm(13 / 16),
+      paddingBottom: rhythm(13 / 16),
+      paddingLeft: rhythm(1),
+      paddingRight: rhythm(1),
     },
-    'blockquote > :last-child': {
+    'figure blockquote': {
+      fontStyle: 'italic',
+      marginLeft: 0,
+      marginRight: 0,
+      marginBottom: rhythm(1 / 2)
+    },
+    'figure > :last-child': {
       marginBottom: 0,
     },
+    hr: {
+      margin: `${rhythm(2)} auto`,
+      maxWidth: '50%',
+      height: rhythm(2 / 16),
+      background: colors.light.border
+    },
     iframe: {
-      maxWidth: '100%'
+      maxWidth: '100%',
+      width: '100%'
     }
   })
 })
