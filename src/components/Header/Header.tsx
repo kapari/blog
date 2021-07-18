@@ -13,7 +13,7 @@ import Menu from '@material-ui/icons/Menu';
 const Element = styled.header`
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 6px ${theme.light.shadow};
   background-color: ${theme.light.bg};
 `;
 
@@ -119,7 +119,7 @@ const Header: React.FC<Props> = (props: Props) => {
   return (
     <Element>
       <Accent />
-      { props.children}
+      {props.children}
       <Content>
         <NavWrap bg="light" expand="md">
           <Brand>

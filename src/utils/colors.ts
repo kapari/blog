@@ -16,6 +16,7 @@ const colors = {
   blackish: '#393a41',
   black: '#111',
   white: '#fff',
+  shadow: 'rgba(0, 0, 0, 0.3)'
 }
 
 const theme: {
@@ -36,7 +37,8 @@ const theme: {
     primaryContrast: colors.white,
     border: colors.medGreen.hex,
     gradient: `linear-gradient(120deg, ${colors.medGreen.hex} 0%,
-      ${colors.teal} 100%)`
+      ${colors.teal} 100%)`,
+    shadow: colors.shadow
   },
   dark: {
     bg: colors.blackish,
@@ -49,7 +51,8 @@ const theme: {
     primaryContrast: colors.white,
     border: colors.teal,
     gradient: `linear-gradient(120deg, ${colors.medGreen.hex} 0%,
-        ${colors.teal} 100%)`
+        ${colors.teal} 100%)`,
+    shadow: colors.shadow
   }
 }
 

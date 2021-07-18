@@ -59,16 +59,35 @@ const Element = styled(Nav)`
   .nav-link.nav-link { // specificity for bs
     ${linkStyles}
   }
+  .nav-link + .dropdown-menu {
+    @media (min-width: ${bp.sm}) {
+      transform: translateY(15px);
+    }
+  }
   .dropdown-menu {
-    border: 0;
+    border-top: 1px solid ${theme.light.bgAltStrong};
+    border-bottom: 1px solid ${theme.light.bgAltStrong};
+    border-left: 0;
+    border-right: 0;
     border-radius: 0;
-    background-color: ${theme.light.bgAltStrong};  
-    background-image: linear-gradient(
-      120deg, 
-      ${theme.light.bgAltStrong} 0%, 
-      ${theme.light.primary} 100%
-    );
-    padding: 0.1rem;
+    background-color: ${theme.light.bg};
+    @media (min-width: ${bp.sm}) {
+      box-shadow: 0 0 6px ${theme.light.shadow};
+      border-top: 0;
+      border-bottom: 0;
+      padding-top: 0;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -6px;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background-color: ${theme.light.bg};
+    }
   }
 `;
 
@@ -83,13 +102,13 @@ const NestedLink = styled(Link)`
 const NavLinks: React.FC = () => {
   return (
     <Element>
-      {topLinks.map((item, key) => (
+      {topLinks.map((item) => (
         item.url ? (
-          <NavLink to={item.url || '/'} as={Link} key={key}>
+          <NavLink to={item.url || '/'} as={Link} key={item.text}>
             {item.text}
           </NavLink>
         ) : (
-          <NavDropdown title={item.text} id={key.toString()}>
+          <NavDropdown title={item.text} id={item.text.toString()}>
             {item.children?.map((item, key) => (
               <NavDropdown.Item
                 as={NestedLink}
