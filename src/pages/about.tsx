@@ -8,18 +8,10 @@ const AboutPage = () => {
       <Seo title="About" description="Background and Contact" />
       <h1>About</h1>
       <h2>Dance</h2>
-      <p>
-        I help people to be more present in their own bodies, so they can
-        connect more deeply and confidently with others.
+      <p>I help people to be more present in their own bodies, so they can connect more deeply and confidently with others.
       </p>
-      <p>
-        As a <a href="https://hsperson.com/">Highly Sensitive Person</a> and
-        an introvert, dance was the first place where I felt my sensitivity was an asset, and that was incredibly healing. I've also found dance to be a source of personal growth: practicing boundaries, self-expression, public speaking, leadership, and claiming my own space in this
-        loud and busy world.
-      </p>
-      <p>
-        It is a joy to have a mutually respectful, connected, and playful dance. It is a joy to help others find that place with me.
-      </p>
+      <p>As a <a href="https://hsperson.com/">Highly Sensitive Person</a> and an introvert, dance was the first place where I felt my sensitivity was an asset, and that was incredibly healing. Dance has been a source of growth in practicing boundaries, self-expression, public speaking, leadership, and claiming my own space in this loud and busy world.</p>
+      <p>It is a joy to have a mutually respectful, connected, and playful dance. It is a joy to help others find that place with me.</p>
       <figure>
         <blockquote>
           To pay attention, this is our endless and proper work.
@@ -27,10 +19,10 @@ const AboutPage = () => {
         <figcaption>― Mary Oliver</figcaption>
       </figure>
       <hr />
-      <h2>Technology</h2>
+      <h2>Development</h2>
       <p>I create websites and applications that are pleasant to look at, easy to use, and accessible for everyone.</p>
-      <p>I love learning and solving problems, and the technology field involves much of both. I grew up on art classes and was a Drawing major in college, and I apply my portraiture-level attention to detail and much of that training to my front-end development projects, even when I'm not explicitly the designer.</p>
-      <p>The best development work starts with empathy. What problem are we really solving?</p>
+      <p>I love learning and solving problems, and the technology field involves much of both. I grew up on art classes and was a fine art major in college, and I apply much of that training ― including my portraiture-level attention to detail ― to my front-end development projects, even when I'm not explicitly the designer.</p>
+      <p>The best development work starts with empathy: what problem are we really solving? How can we work together to create a clear and effective solution?</p>
       <figure>
         <blockquote>
           What we know matters, but who we are matters more.
