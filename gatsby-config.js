@@ -11,6 +11,18 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-image',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Ariel Kaplan',
+        short_name: 'Ariel Kaplan',
+        start_url: '/',
+        background_color: '#f9faf4',
+        theme_color: '#c1cfa0',
+        display: 'minimal-ui',
+        icon: `src/images/favicon.png`
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
