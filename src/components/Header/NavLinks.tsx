@@ -33,6 +33,10 @@ const topLinks = [
   {
     url: '/about/',
     text: 'About'
+  },
+  {
+    url: '/contact/',
+    text: 'Contact'
   }
 ];
 

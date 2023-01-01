@@ -5,7 +5,7 @@ import Seo from '../components/Seo/Seo';
 const AboutPage = () => {
   return (
     <Layout>
-      <Seo title="About" description="Background and Contact" />
+      <Seo title="About" description="Background" />
       <h1>About</h1>
       <h2>Dance</h2>
       <p>I help people to be more present in their own bodies, so they can connect more deeply and confidently with others.
