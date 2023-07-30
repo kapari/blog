@@ -3,9 +3,16 @@ import styled from 'styled-components'
 import { TextField } from '@material-ui/core'
 import theme from './../../utils/colors';
 
+const Form = styled.form`
+  width: 100%;
+`
+
 const Row = styled.div`
   &:not(:first-child) {
     margin-top: 16px;
+  }
+  > .MuiFormControl-root {
+    display: flex;
   }
 `
 
@@ -31,14 +38,14 @@ const Button = styled.button`
 const Contact = () => {
   return (
     <>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="honey-bot">
+      <Form name="contact" method="POST" action='/thanks' data-netlify="true" netlify-honeypot="honey-bot" data-netlify-recaptcha='true'>
         <input hidden name="form-name" value="contact" readOnly />
         <BotField name="honey-bot" defaultValue='' />
         <Row>
-          <TextField variant='outlined' label="Name" name="name" defaultValue='' required></TextField>
+          <TextField variant='outlined' label="Your Name" name="name" defaultValue='' required></TextField>
         </Row>
         <Row>
-          <TextField variant='outlined' label="Email" name="email" type='email' defaultValue='' required></TextField>
+          <TextField variant='outlined' label="Your Email" name="email" type='email' defaultValue='' required></TextField>
         </Row>
         {/* <Row>
           <FormControl component="fieldset">
@@ -59,11 +66,9 @@ const Contact = () => {
           <TextField variant='outlined' label="Message" name="message" defaultValue='' multiline minRows={4}></TextField>
         </Row>
         <Row>
-          <p>
             <Button type="submit">Send</Button>
-          </p>
         </Row>
-      </form>
+      </Form>
     </>
   )
 }
