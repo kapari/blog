@@ -5,7 +5,7 @@ const AboutPage = () => {
   return (
     <Layout>
       <h1>Thanks</h1>
-      <p>Your message has been submitted.</p>
+      <p>Your request has been submitted.</p>
     </Layout>
   );
 };
