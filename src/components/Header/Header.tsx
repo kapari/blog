@@ -32,7 +32,8 @@ const CollapseNav = styled(Navbar.Collapse)`
 
 const NavWrap = styled(Navbar)`
   background-color: transparent !important; // override bs
-  justify-content: space-between;
+  justify-content: space-between !important; // override bs
+  align-items: center;
   flex-wrap: wrap;
   @media (min-width: ${bp.sm}) {
     flex-wrap: nowrap;
