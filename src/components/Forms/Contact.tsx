@@ -38,9 +38,16 @@ const Button = styled.button`
 const Contact = () => {
   return (
     <>
-      <Form name="contact" method="POST" action='/thanks' data-netlify="true" netlify-honeypot="honey-bot" data-netlify-recaptcha='true'>
-        <input hidden name="form-name" value="contact" readOnly />
-        <BotField name="honey-bot" defaultValue='' />
+      <Form 
+        name="contact" 
+        method="POST" 
+        action='/thanks' 
+        data-netlify="true" 
+        data-netlify-honeypot="honey-bot" 
+        // data-netlify-recaptcha='true'
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <BotField type="hidden" name="honey-bot" defaultValue='' />
         <Row>
           <TextField variant='outlined' label="Your Name" name="name" defaultValue='' required></TextField>
         </Row>
